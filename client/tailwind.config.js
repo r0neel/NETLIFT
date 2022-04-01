@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/**/*.{jsx,js}"],
   theme: {
@@ -9,6 +11,9 @@ module.exports = {
         "nl-lightgrey": "FCFCFC",
         "nl-navblue": "094288",
         "nl-textgrey": "4F4F4F",
+      },
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
     },
   },
