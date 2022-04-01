@@ -9,7 +9,7 @@ const FormInputs = ({ label }) => {
         placeholder=" "
       />
       <label
-        className=" capitalize origin-0 absolute top-5 text-nl-darkblue text-xl"
+        className=" duration-300 capitalize origin-0 absolute top-5 text-nl-darkblue text-xl"
         htmlFor={label}
       >
         {label}:
