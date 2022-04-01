@@ -18,14 +18,14 @@
 ## Changelog
 ### Client
 #### Config
-[x] Added webpack.config
-[x] Added webpack.config.dev
-[x] Added webpack.config.prod
-[x] Configurated webpack
+- [x] Added webpack.config
+- [x] Added webpack.config.dev
+- [x] Added webpack.config.prod
+- [x] Configurated webpack
 
 #### Public
-[x] Added images folder
-[x] Added index.html
-[x] Added !DOCTYPE and div#root to index.html
+- [x] Added images folder
+- [x] Added index.html
+- [x] Added !DOCTYPE and div#root to index.html
 
 
