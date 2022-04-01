@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
+      transformOrigin: {
+        0: "0%",
+      },
     },
   },
   plugins: [],
