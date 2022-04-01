@@ -1,11 +1,12 @@
 import React from "react";
-import FormBtn from "../../components/FormBtn";
+import Form from "../../components/Form";
 
 const LoginPage = () => {
+  const inputs = ["username", "password"];
   return (
-    <>
-      <FormBtn text="Login" />
-    </>
+    <div className=" bg-nl-darkblue h-screen container">
+      <Form text="Login" inputs={inputs} />
+    </div>
   );
 };
 
