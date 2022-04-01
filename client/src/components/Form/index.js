@@ -7,7 +7,7 @@ const Form = (props) => {
   return (
     <form>
       {inputs.map((input) => (
-        <FormInputs label={input} />
+        <FormInputs key={`${input}_input`} label={input} />
       ))}
       <FormBtn text={text} />
     </form>
