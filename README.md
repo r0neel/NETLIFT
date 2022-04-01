@@ -29,6 +29,10 @@
 - [x] Added index.html
 - [x] Added !DOCTYPE and div#root to index.html
 
+### Src
+- [x] Added components folder
+- [x] Added pages folder
+
 ## Bugs
 - (fill in)
 
