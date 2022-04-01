@@ -3,7 +3,7 @@ const FormInputs = ({ label }) => {
   return (
     <div className="bg-slate-50 relative rounded-xl p-5">
       <input
-        className="bg-transparent z-10 block w-full appearance-none focus:outline-none text-xl"
+        className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl"
         type="text"
         name={label}
         placeholder=" "
