@@ -1,0 +1,3 @@
+[submodule "NETLIFT-server"]
+	path = server
+	url = ./NETLIFT-server
