@@ -12,7 +12,7 @@
 ### Server
 
 - git submodule update --init
-- `cd server`
+- `cd server `
 - `pipenv shell`
 - `pipenv install --dev`
 - `pipenv run dev`
