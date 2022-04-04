@@ -11,7 +11,7 @@ import {
 const NavBar = () => {
 	return (
 		<>
-			<nav className="bg-nl-lightblue h-73 flex justify-center items-start inset-x-0 bottom-0">
+			<nav className="bg-nl-lightblue h-73 flex justify-center sticky  items-start inset-x-0 bottom-0">
 				<div id="links" className="justify-center flex space-x-10 pt-3">
 					<div
 						id="home-link"

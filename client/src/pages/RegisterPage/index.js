@@ -10,7 +10,7 @@ const RegisterPage = () => {
         className=" container object-cover h-28 w-80 rounded-full mx-auto"
         src={logo}
       />
-      <Form text="Login" inputs={inputs} />
+      <Form text="Register" inputs={inputs} />
     </div>
   );
 };

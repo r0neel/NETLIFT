@@ -10,7 +10,7 @@ const App = () => {
   return(
   <>
     <Pages.RegisterPage />
-    {/* <NavBar /> */}
+    <NavBar />
 
     {/* <Switch> */}
     {/* <Route exact path='/'><Home /></Route> */}
