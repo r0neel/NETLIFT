@@ -16,7 +16,7 @@ const Form = (props) => {
 };
 
 Form.propTypes = {
-  text: PropTypes.text.isRequired,
+  text: PropTypes.string.isRequired,
   inputs: PropTypes.array.isRequired,
 };
 

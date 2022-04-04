@@ -23,7 +23,7 @@ const FormInputs = ({ label }) => {
 };
 
 FormInputs.propTypes = {
-  label: PropTypes.text.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default FormInputs;
