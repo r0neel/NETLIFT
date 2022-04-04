@@ -3,18 +3,20 @@ import React from 'react';
 
 // import './App.css';
 
-// import { Home } from './pages'
+import * as Pages from "./pages";
 import { NavBar } from './components'
 
 const App = () => {
-return(
-<>
-<NavBar />
-{/* <Switch> */}
-{/* <Route exact path='/'><Home /></Route> */}
-{/* <Route path='/'>< /></Route> */}
-{/* </Switch> */}
-</>
+  return(
+  <>
+    {/* <NavBar /> */}
+    <Pages.RegisterPage />
+
+    {/* <Switch> */}
+    {/* <Route exact path='/'><Home /></Route> */}
+    {/* <Route path='/'>< /></Route> */}
+    {/* </Switch> */}
+  </>
 )};
 
 export default App;

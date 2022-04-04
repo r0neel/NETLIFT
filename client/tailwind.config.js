@@ -17,7 +17,10 @@ module.exports = {
       },
       height: {
         '73': '73px'
-      }
+      },
+      transformOrigin: {
+        0: "0%",
+      },
     },
   },
   plugins: [],

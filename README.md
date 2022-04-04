@@ -1,7 +1,9 @@
 # NETLIFT
 
 ## Installation
+
 ### Client
+
 - Clone repo and `cd` into folder
 - `cd client`
 - `npm install` to install dependencies
@@ -9,13 +11,22 @@
 
 ### Server
 
+- git submodule update --init
+- `cd server `
+- `pipenv shell`
+- `pipenv install --dev`
+- `pipenv run dev`
+
 ## Usage
+
 ### Client
+
 - `npm run dev` to run in development mode
 
 ### Server
 
 ## Changelog
+
 ### Client
 
 ### Config
@@ -43,3 +54,8 @@
 ### Challenges
 - (fill in)
 
+#### Public
+
+- [x] Added images folder
+- [x] Added index.html
+- [x] Added !DOCTYPE and div#root to index.html
