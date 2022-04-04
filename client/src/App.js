@@ -3,7 +3,7 @@ import React from 'react';
 
 // import './App.css';
 
-import * as Pages from "./pages";
+import { History, LoginPage, Progress, RegisterPage, Settings } from "./pages";
 import { NavBar } from './components'
 
 const App = () => {
@@ -11,11 +11,14 @@ const App = () => {
   <>
     {/* <Pages.RegisterPage /> */}
     <NavBar />
-
-    {/* <Switch> */}
-    {/* <Route exact path='/'><Home /></Route> */}
-    {/* <Route path='/'>< /></Route> */}
-    {/* </Switch> */}
+    <Switch>
+      {/* <Route exact path='/'><Home /></Route> */}
+      <Route path='/login'><LoginPage/></Route>
+      <Route path='/register'><RegisterPage /></Route>
+      <Route path='/history'><History /></Route>
+      <Route path='/progress'><Progress /></Route>
+      <Route path='/settings'><Settings /></Route>
+    </Switch>
   </>
 )};
 
