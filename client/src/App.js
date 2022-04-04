@@ -6,16 +6,29 @@ import { History, LoginPage, Progress, RegisterPage, Settings } from "./pages";
 import { NavBar } from './components'
 
 const App = () => {
+  // const visNav = () => {
+  //   return (
+  //   <>
+  //     <Routes>
+  //       <Route path='history' element={<History />}/>
+  //       <Route path='progress' element={<Progress />}/>
+  //       <Route path='settings' element={<Settings />}/>
+  //     </Routes>
+  //     <NavBar />
+  //   </>
+  //   )
+  // }
+
   return(
   <>
-    <NavBar />
     <Routes>
-      {/* <Route exact path='/'><Home /></Route> */}
-      {/* <Route path='/login'><LoginPage/></Route> */}
-      {/* <Route path='/register'><RegisterPage /></Route> */}
-      <Route path='/history' element={<History />}/>
-      <Route path='/progress' element={<Progress />}/>
-      <Route path='/settings' element={<Settings />}/>
+      {/* <Route path='/home' element={<Home />}/> */}
+      <Route path='login' element={<LoginPage />}/>
+      <Route path='register' element={<RegisterPage />}/>
+      <Route path='history' element={<><History /> <NavBar /></>}/>
+      <Route path='progress' element={<><Progress /> <NavBar /></>}/>
+      <Route path='settings' element={<><Settings /> <NavBar /></>}/>
+
     </Routes>
   </>
 )};
