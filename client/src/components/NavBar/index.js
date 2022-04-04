@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-dom';
+import { NavLink as Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faHouse,
@@ -11,35 +11,34 @@ import {
 const NavBar = () => {
 	return (
 		<>
-			<nav className="bg-nl-lightblue h-73 flex justify-center items-start">
+			<nav className="bg-nl-lightblue h-73 flex justify-center sticky bottom inset-x-0 bottom-0">
 				<div id="links" className="justify-center flex space-x-10 pt-3">
-					<div
-						id="home-link"
-						className="flex items-center"
-					>
-            {/* <Link to='/home' active></Link> */}
-						<a href="/home" className='active:bg-violet-600 '>
-							<FontAwesomeIcon className="w-8 h-8 active:nl-navblue" icon={faHouse} />
-							<p className="text-xs">Home</p>
-						</a>
+					<div id="home-link">
+						<Link to="home" className="flex flex-col items-center">
+							<FontAwesomeIcon
+								className="w-8 h-8 active:nl-navblue"
+								icon={faHouse}
+							/>
+							<p className="text-xs pt-1">Home</p>
+						</Link>
 					</div>
-					<div id="history-link" className="flex justify-items-center">
-						<a href="/history">
-							<FontAwesomeIcon className="w-8 h-8" icon={faCalendarDays} />
-							<p className="text-xs">History</p>
-						</a>
+					<div id="history-link" >
+						<Link to="history" className="flex flex-col items-center">
+							<FontAwesomeIcon className="w-8 h-8 " icon={faCalendarDays} />
+							<p className="text-xs pt-1">History</p>
+						</Link>
 					</div>
-					<div id="progress-link" className='align-self-center'>
-						<a href="/progress">
+					<div id="progress-link">
+						<Link to="progress" className="flex flex-col items-center">
 							<FontAwesomeIcon className="w-8 h-8" icon={faChartLine} />
-							<p className="text-xs">Progress</p>
-						</a>
+							<p className="text-xs pt-1">Progress</p>
+						</Link>
 					</div>
 					<div id="settings-link">
-						<a href="/settings">
+						<Link to="settings" className="flex flex-col items-center">
 							<FontAwesomeIcon className="w-8 h-8" icon={faGear} />
-							<p className="text-xs">Settings</p>
-						</a>
+							<p className="text-xs pt-1">Settings</p>
+						</Link>
 					</div>
 				</div>
 			</nav>
