@@ -11,34 +11,34 @@ import {
 const NavBar = () => {
 	return (
 		<>
-			<nav className="bg-nl-lightblue h-73 flex justify-center sticky  items-start inset-x-0 bottom-0">
+			<nav className="bg-nl-lightblue h-73 flex justify-center sticky inset-x-0 bottom-0">
 				<div id="links" className="justify-center flex space-x-10 pt-3">
-					<div
-						id="home-link"
-						className="flex items-center"
-					>
-            {/* <Link to='/home' active></Link> */}
-						<a href="/home" className='active:bg-violet-600 '>
-							<FontAwesomeIcon className="w-8 h-8 active:nl-navblue" icon={faHouse} />
-							<p className="text-xs">Home</p>
+					<div id="home-link">
+						{/* <Link to='/home' active></Link> */}
+						<a href="/home" className="flex flex-col items-center">
+							<FontAwesomeIcon
+								className="w-8 h-8 active:nl-navblue"
+								icon={faHouse}
+							/>
+							<p className="text-xs pt-1">Home</p>
 						</a>
 					</div>
-					<div id="history-link" className="flex justify-items-center">
-						<a href="/history">
-							<FontAwesomeIcon className="w-8 h-8" icon={faCalendarDays} />
-							<p className="text-xs">History</p>
+					<div id="history-link" >
+						<a href="/history" className="flex flex-col items-center">
+							<FontAwesomeIcon className="w-8 h-8 " icon={faCalendarDays} />
+							<p className="text-xs pt-1">History</p>
 						</a>
 					</div>
-					<div id="progress-link" className='align-self-center'>
-						<a href="/progress">
+					<div id="progress-link">
+						<a href="/progress" className="flex flex-col items-center">
 							<FontAwesomeIcon className="w-8 h-8" icon={faChartLine} />
-							<p className="text-xs">Progress</p>
+							<p className="text-xs pt-1">Progress</p>
 						</a>
 					</div>
 					<div id="settings-link">
-						<a href="/settings">
+						<a href="/settings" className="flex flex-col items-center">
 							<FontAwesomeIcon className="w-8 h-8" icon={faGear} />
-							<p className="text-xs">Settings</p>
+							<p className="text-xs pt-1">Settings</p>
 						</a>
 					</div>
 				</div>

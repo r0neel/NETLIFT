@@ -9,7 +9,7 @@ import { NavBar } from './components'
 const App = () => {
   return(
   <>
-    <Pages.RegisterPage />
+    {/* <Pages.RegisterPage /> */}
     <NavBar />
 
     {/* <Switch> */}
