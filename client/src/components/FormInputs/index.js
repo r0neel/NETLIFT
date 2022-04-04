@@ -11,6 +11,7 @@ const FormInputs = ({ label }) => {
         type={type}
         name={label}
         placeholder=" "
+        required
       />
       <label
         className=" duration-300 capitalize origin-0 absolute top-5 text-nl-darkblue text-xl"
