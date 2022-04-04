@@ -1,0 +1,29 @@
+import React from 'react';
+import {  Route, Routes, useLocation } from 'react-router-dom';
+
+
+import { History, LoginPage, Progress, RegisterPage, Settings, ProgramsPage } from "./pages";
+import { NavBar } from './components'
+
+const App = () => {
+  
+  let location = useLocation()
+  let showNav = location === 'login' || 'register' ? null : <NavBar />
+  return(
+  <>
+    <Routes>
+      {/* <Route path='/home' element={<Home />}/> */}
+      <Route path='/' >
+        <Route path='login' element={ <LoginPage /> }/>
+        <Route path='register' element={ <RegisterPage /> }/>
+      </Route>
+        <Route path='programs' element={ <ProgramsPage/> }/>
+        <Route path='history' element={ <History /> }/>
+        <Route path='progress' element={ <Progress /> }/>
+        <Route path='settings' element={ <Settings />}/>
+    </Routes>
+    {showNav}
+  </>
+)};
+
+export default App;

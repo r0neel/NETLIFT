@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const FormBtn = ({ text }) => {
   return (
@@ -6,6 +7,10 @@ const FormBtn = ({ text }) => {
       {text}
     </button>
   );
+};
+
+FormBtn.propTypes = {
+  text: PropTypes.string.isRequired,
 };
 
 export default FormBtn;
