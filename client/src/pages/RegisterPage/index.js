@@ -4,7 +4,12 @@ import logo from "../../static/imgs/logo.png";
 import { NavLink as Link } from "react-router-dom";
 
 const RegisterPage = () => {
-  const inputs = ["email", "username", "password", "confirm password"];
+  const inputs = [
+    { text: "email", message: "Must be an email" },
+    { text: "username", message: "" },
+    { text: "password", message: "" },
+    { text: "confirm password", message: "" },
+  ];
   return (
     <div className="mx-auto bg-nl-darkblue min-h-screen container pt-16">
       <div className="space-y-20">
