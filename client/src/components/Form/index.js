@@ -1,6 +1,7 @@
 import React from "react";
 import FormBtn from "../FormBtn";
 import FormInputs from "../FormInputs";
+import PropTypes from "prop-types";
 
 const Form = (props) => {
   const { text, inputs } = props;
@@ -12,6 +13,11 @@ const Form = (props) => {
       <FormBtn text={text} />
     </form>
   );
+};
+
+Form.propTypes = {
+  text: PropTypes.string.isRequired,
+  inputs: PropTypes.array.isRequired,
 };
 
 export default Form;
