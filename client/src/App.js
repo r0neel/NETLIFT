@@ -23,12 +23,13 @@ const App = () => {
   <>
     <Routes>
       {/* <Route path='/home' element={<Home />}/> */}
-      <Route path='login' element={<LoginPage />}/>
-      <Route path='register' element={<RegisterPage />}/>
-      <Route path='history' element={<><History /> <NavBar /></>}/>
-      <Route path='progress' element={<><Progress /> <NavBar /></>}/>
-      <Route path='settings' element={<><Settings /> <NavBar /></>}/>
-
+      <Route path='/login' element={ <LoginPage /> }/>
+      <Route path='/register' element={ <RegisterPage /> }/>
+      <Route path='/' element={ <NavBar /> }>
+        <Route path='/history' element={ <History /> }/>
+        <Route path='/progress' element={ <Progress /> }/>
+        <Route path='/settings' element={ <Settings />}/>
+      </Route>
     </Routes>
   </>
 )};
