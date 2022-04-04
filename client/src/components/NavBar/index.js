@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faHouse,
@@ -15,31 +15,31 @@ const NavBar = () => {
 				<div id="links" className="justify-center flex space-x-10 pt-3">
 					<div id="home-link">
 						{/* <Link to='/home' active></Link> */}
-						<a href="/home" className="flex flex-col items-center">
+						<Link to="home" className="flex flex-col items-center">
 							<FontAwesomeIcon
 								className="w-8 h-8 active:nl-navblue"
 								icon={faHouse}
 							/>
 							<p className="text-xs pt-1">Home</p>
-						</a>
+						</Link>
 					</div>
 					<div id="history-link" >
-						<a href="/history" className="flex flex-col items-center">
+						<Link to="history" className="flex flex-col items-center">
 							<FontAwesomeIcon className="w-8 h-8 " icon={faCalendarDays} />
 							<p className="text-xs pt-1">History</p>
-						</a>
+						</Link>
 					</div>
 					<div id="progress-link">
-						<a href="/progress" className="flex flex-col items-center">
+						<Link to="progress" className="flex flex-col items-center">
 							<FontAwesomeIcon className="w-8 h-8" icon={faChartLine} />
 							<p className="text-xs pt-1">Progress</p>
-						</a>
+						</Link>
 					</div>
 					<div id="settings-link">
-						<a href="/settings" className="flex flex-col items-center">
+						<Link to="settings" className="flex flex-col items-center">
 							<FontAwesomeIcon className="w-8 h-8" icon={faGear} />
 							<p className="text-xs pt-1">Settings</p>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</nav>
