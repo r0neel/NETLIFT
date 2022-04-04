@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 const FormInputs = ({ label }) => {
   let type = "text";
   if (/password/i.test(label)) type = "password";
+  if (/email/i.test(label)) type = "email";
+
   return (
     <div className="bg-slate-50 relative rounded-xl p-5">
       <input
