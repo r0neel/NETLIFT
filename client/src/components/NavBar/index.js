@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faHouse,
@@ -11,10 +11,9 @@ import {
 const NavBar = () => {
 	return (
 		<>
-			<nav className="bg-nl-lightblue h-73 flex justify-center sticky inset-x-0 bottom-0">
+			<nav className="bg-nl-lightblue h-73 flex justify-center sticky bottom inset-x-0 bottom-0">
 				<div id="links" className="justify-center flex space-x-10 pt-3">
 					<div id="home-link">
-						{/* <Link to='/home' active></Link> */}
 						<Link to="home" className="flex flex-col items-center">
 							<FontAwesomeIcon
 								className="w-8 h-8 active:nl-navblue"
