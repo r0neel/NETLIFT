@@ -21,7 +21,7 @@ const App = () => {
         <Route path='progress' element={ <Progress /> }/>
         <Route path='settings' element={ <Settings />}/>
     </Routes>
-    {location.pathname === ('/login' || '/register') ? null : <NavBar />}
+    {location.pathname === '/login' || location.pathname === '/register' ? null : <NavBar />}
   </>
 )};
 
