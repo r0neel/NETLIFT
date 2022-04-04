@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Settings = () => {
-return(
-<>
-<h1>Settings</h1>
-</>
-)};
+  return(
+    <div className="bg-nl-darkblue min-h-screen px-8">
+  </div>
+  );};
 export default Settings;
