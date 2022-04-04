@@ -58,17 +58,18 @@ const ProgramsPage = () => {
     day < dayOfWeek ? day + 7 : day
   );
   trainingDays = trainingDays.sort((x, y) => x - y);
-  // how to format for the data
 
+  // TODO: turn this into a link to the workout page
   return (
     <div className="bg-nl-darkblue min-h-screen px-8">
       <Title text="Home" />
-      <div>
+      <div className=" space-y-10">
         {trainingDays.map((day) => (
           <WorkoutPreview
             day={today.day(day).format("ddd D MMM")}
             exercises={exerciseList}
             key={today.day(day).format()}
+            workoutNum={1}
           />
         ))}
       </div>
