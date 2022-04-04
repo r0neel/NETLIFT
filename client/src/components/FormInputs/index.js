@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 const FormInputs = ({ label }) => {
   let type = "text";
   if (/password/i.test(label)) type = "password";
@@ -18,6 +20,10 @@ const FormInputs = ({ label }) => {
       </label>
     </div>
   );
+};
+
+FormInputs.propTypes = {
+  label: PropTypes.text.isRequired,
 };
 
 export default FormInputs;
