@@ -9,8 +9,8 @@ import { NavBar } from './components'
 const App = () => {
   return(
   <>
-    {/* <NavBar /> */}
     <Pages.RegisterPage />
+    {/* <NavBar /> */}
 
     {/* <Switch> */}
     {/* <Route exact path='/'><Home /></Route> */}
