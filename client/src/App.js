@@ -8,13 +8,14 @@ import { NavBar } from './components'
 const App = () => {
   
   let location = useLocation()
-  let showNav = location === 'login' || 'register' ? null : <NavBar />
+  
+  // let showNav = 
   return(
   <>
     <Routes>
       {/* <Route path='/home' element={<Home />}/> */}
       <Route path='/' >
-        <Route path='login' element={ <LoginPage /> }/>
+        <Route path='/login' element={ <LoginPage /> }/>
         <Route path='register' element={ <RegisterPage /> }/>
       </Route>
         <Route path='programs' element={ <ProgramsPage/> }/>
@@ -22,7 +23,7 @@ const App = () => {
         <Route path='progress' element={ <Progress /> }/>
         <Route path='settings' element={ <Settings />}/>
     </Routes>
-    {showNav}
+    {location.pathname === ('/login' || '/register') ? null : <NavBar />}
   </>
 )};
 
