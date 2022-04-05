@@ -1,49 +1,51 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const Dotenv = require("dotenv-webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const ROOT_DIRECTORY = path.join(__dirname, '../');
-const PUBLIC_DIRECTORY = path.join(ROOT_DIRECTORY, 'public');
+const ROOT_DIRECTORY = path.join(__dirname, "../");
+const PUBLIC_DIRECTORY = path.join(ROOT_DIRECTORY, "public");
 
 const config = {
-  entry: [path.resolve(ROOT_DIRECTORY, 'src/index.js')],
+  entry: [path.resolve(ROOT_DIRECTORY, "src/index.js")],
   output: {
-    path: path.resolve(ROOT_DIRECTORY, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/',
+    path: path.resolve(ROOT_DIRECTORY, "dist"),
+    filename: "bundle.js",
+    publicPath: "/",
   },
-  mode: 'development',
+  mode: "development",
   resolve: {
-    modules: [path.resolve('node_modules'), 'node_modules']
+    modules: [path.resolve("node_modules"), "node_modules"],
   },
   performance: {
     hints: false,
   },
   plugins: [
-    new HtmlWebpackPlugin ({
-      template: path.join(PUBLIC_DIRECTORY, 'index.html'),
-      favicon: path.join(PUBLIC_DIRECTORY, 'image.png'),
+    new HtmlWebpackPlugin({
+      template: path.join(PUBLIC_DIRECTORY, "index.html"),
+      favicon: path.join(PUBLIC_DIRECTORY, "image.png"),
     }),
+    new Dotenv(),
   ],
   module: {
     rules: [
-      { 
+      {
         test: /\.(js|jsx)$/,
         resolve: {
-          extensions: ['.js', '.jsx']
+          extensions: [".js", ".jsx"],
         },
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: "babel-loader",
       },
-      { 
+      {
         test: /\.(css)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
-      }, 
-      { 
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
         test: /\.(png|jpg|jpeg|pdf)$/,
-        use: ['file-loader'],
-      }, 
-    ]
-  }
-}
+        use: ["file-loader"],
+      },
+    ],
+  },
+};
 
 module.exports = config;
