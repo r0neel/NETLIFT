@@ -14,8 +14,16 @@ const SetBtn = ({ reps }) => {
   const clickHandler = () => {
     finished ? handleReps() : setFinished(true);
   };
-
-  return <button onClick={clickHandler}>{repsDone}</button>;
+  let bgColour;
+  finished ? (bgColour = "bg-nl-lightblue") : (bgColour = "bg-nl-grey");
+  return (
+    <button
+      className={bgColour + " rounded-full w-14 h-14 text-2xl"}
+      onClick={clickHandler}
+    >
+      {repsDone}
+    </button>
+  );
 };
 
 SetBtn.propTypes = {
