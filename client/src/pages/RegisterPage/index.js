@@ -6,7 +6,7 @@ import { NavLink as Link } from "react-router-dom";
 const RegisterPage = () => {
   // TODO: remove this
   // eslint-disable-next-line no-undef
-  console.log(process.env.REACT_APP_API_URL);
+  console.log(process.env.API_URL);
 
   const inputs = [
     { text: "email", message: "Must be an email" },
