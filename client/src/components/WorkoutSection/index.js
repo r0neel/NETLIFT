@@ -1,11 +1,23 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import Exercise from "../Exercise";
-const WorkoutSection = () => {
+const WorkoutSection = ({ workouts }) => {
   return (
     <>
-      <Exercise sets={5} reps={5} name={"squat"} />
+      {workouts.map((workout) => (
+        <Exercise
+          key={workout.name}
+          sets={workout.sets}
+          reps={workout.reps}
+          name={workout.name}
+        />
+      ))}
     </>
   );
 };
 
+WorkoutSection.propTypes = {
+  workouts: PropTypes.array.isRequired,
+};
 export default WorkoutSection;
