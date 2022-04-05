@@ -18,7 +18,7 @@ const SetBtn = ({ reps }) => {
   finished ? (bgColour = "bg-nl-lightblue") : (bgColour = "bg-nl-grey");
   return (
     <button
-      className={bgColour + " rounded-full w-14 h-14 text-2xl"}
+      className={bgColour + " rounded-full w-12 h-12 text-2xl"}
       onClick={clickHandler}
     >
       {repsDone}
