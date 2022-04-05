@@ -1,6 +1,6 @@
 [build]
     base = "client"
-    command = "npm run build"
+    command = "node ./scripts/createEnv.js && npm run build"
     publish = "/dist"
 [[redirects]]
     from = "/*" 
