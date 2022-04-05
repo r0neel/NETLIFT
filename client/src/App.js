@@ -9,6 +9,7 @@ import {
   Settings,
   ProgramsPage,
 } from "./pages";
+
 import { NavBar } from "./components";
 
 const App = () => {

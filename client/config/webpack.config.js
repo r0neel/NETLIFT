@@ -13,7 +13,7 @@ const config = {
   },
   mode: "development",
   resolve: {
-    modules: [path.resolve("node_modules"), "node_modules"]
+    modules: [path.resolve("node_modules"), "node_modules"],
   },
   performance: {
     hints: false,
@@ -26,24 +26,27 @@ const config = {
   ],
   module: {
     rules: [
-      { 
+      {
         test: /\.(js|jsx)$/,
         resolve: {
-          extensions: [".js", ".jsx"]
+
+          extensions: [".js", ".jsx"],
         },
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+
       },
-      { 
+      {
         test: /\.(css)$/,
         use: ["style-loader", "css-loader", "postcss-loader"],
-      }, 
-      { 
+      },
+      {
         test: /\.(png|jpg|jpeg|pdf)$/,
         use: ["file-loader"],
-      }, 
-    ]
-  }
+      },
+    ],
+  },
+
 };
 
 module.exports = config;

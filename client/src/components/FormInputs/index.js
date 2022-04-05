@@ -7,8 +7,6 @@ const FormInputs = ({ label }) => {
   if (/password/i.test(label.text)) type = "password";
   if (/email/i.test(label.text)) type = "email";
 
-  // This is used to control any requirements needed on inputs
-  console.log(label.pattern);
   return (
     <div className="bg-slate-50 relative rounded-xl p-5">
       {label.pattern ? (
