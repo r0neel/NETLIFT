@@ -1,7 +1,15 @@
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import * as Pages from "./pages";
+import {
+  History,
+  LoginPage,
+  Progress,
+  RegisterPage,
+  Settings,
+  ProgramsPage,
+} from "./pages";
+
 import { NavBar } from "./components";
 
 const App = () => {
@@ -10,15 +18,15 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="login" element={<Pages.LoginPage />} />
-        <Route path="register" element={<Pages.RegisterPage />} />
-        <Route path="home" element={<Pages.ProgramsPage />} />
-        <Route path="history" element={<Pages.History />} />
-        <Route path="progress" element={<Pages.Progress />} />
-        <Route path="settings" element={<Pages.Settings />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="home" element={<ProgramsPage />} />
+        <Route path="history" element={<History />} />
+        <Route path="progress" element={<Progress />} />
+        <Route path="settings" element={<Settings />} />
       </Routes>
       {location.pathname === "/login" ||
-      location.pathname === "/register" ? null : (
+			location.pathname === "/register" ? null : (
           <NavBar />
         )}
     </>
