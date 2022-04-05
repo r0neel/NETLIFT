@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
+import { Title } from "../../components";
+
 
 const Progress = () => {
-return(
-<>
-<h1 className='pt-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, in nesciunt. Doloribus, fugiat earum. Perspiciatis necessitatibus facere corporis eligendi veritatis. Architecto, nisi nostrum quas alias illum iusto aliquid eos praesentium!</h1>
-lorem
-
-</>
-)};
+  return(
+    <div className="bg-nl-darkblue min-h-screen px-8">
+      <Title text="Progress" />
+    </div>
+  );};
 export default Progress;

@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import { Title } from "../../components";
 
 const Settings = () => {
-return(
-<>
-<h1>Settings</h1>
-</>
-)};
+  return(
+    <div className="bg-nl-darkblue min-h-screen px-8">
+      <Title text="Settings" />
+    </div>
+  );};
 export default Settings;
