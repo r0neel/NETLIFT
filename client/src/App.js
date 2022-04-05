@@ -1,27 +1,35 @@
 import React from "react";
-import {  Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
-
-import { History, LoginPage, Progress, RegisterPage, Settings, ProgramsPage } from "./pages";
-import { NavBar, Title } from "./components";
+import {
+  History,
+  LoginPage,
+  Progress,
+  RegisterPage,
+  Settings,
+  ProgramsPage,
+} from "./pages";
+import { NavBar } from "./components";
 
 const App = () => {
-  
   let location = useLocation();
 
-  return(
+  return (
     <>
-      {/* {location.pathname === "/login" || location.pathname === "/register" ? null : <Title text={location.key} />} */}
       <Routes>
-        <Route path='login' element={ <LoginPage /> }/>
-        <Route path='register' element={ <RegisterPage /> }/>
-        <Route path='home' id="Home" element={ <ProgramsPage/> }/>
-        <Route path='history' element={ <History /> }/>
-        <Route path='progress' element={ <Progress /> }/>
-        <Route path='settings' element={ <Settings />}/>
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="home" element={<ProgramsPage />} />
+        <Route path="history" element={<History />} />
+        <Route path="progress" element={<Progress />} />
+        <Route path="settings" element={<Settings />} />
       </Routes>
-      {location.pathname === "/login" || location.pathname === "/register" ? null : <NavBar />}
+      {location.pathname === "/login" ||
+			location.pathname === "/register" ? null : (
+          <NavBar />
+        )}
     </>
-  );};
+  );
+};
 
 export default App;
