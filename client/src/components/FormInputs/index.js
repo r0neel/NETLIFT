@@ -2,19 +2,45 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const FormInputs = ({ label }) => {
+  // This changes the input type based on the field
   let type = "text";
   if (/password/i.test(label.text)) type = "password";
   if (/email/i.test(label.text)) type = "email";
 
+  // This is used to control any requirements needed on inputs
+  let email = /email/i.test(label.text);
+  let user = /username/i.test(label.text);
+  let pass = /password/i.test(label.text);
+  let confirmPass = /confirm/i.test(label.text);
   return (
     <div className="bg-slate-50 relative rounded-xl p-5">
-      <input
-        className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
-        type={type}
-        name={label.text}
-        placeholder=" "
-        required
-      />
+      {user ? (
+        <input
+          className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
+          type={type}
+          name={label.text}
+          placeholder=" "
+          required
+          minLength={5}
+        />
+      ) : pass ? (
+        <input
+          className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
+          type={type}
+          name={label.text}
+          placeholder=" "
+          required
+          pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$"
+        />
+      ) : (
+        <input
+          className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
+          type={type}
+          name={label.text}
+          placeholder=" "
+          required
+        />
+      )}
       <label
         className="registration_form duration-300 capitalize origin-0 absolute top-5 text-nl-darkblue text-xl  peer-focus-within:text-nl-navblue peer-focus-within:transform peer-focus-within:scale-75 peer-focus-within:-translate-y-6 peer-focus-within:font-bold"
         htmlFor={label.text}

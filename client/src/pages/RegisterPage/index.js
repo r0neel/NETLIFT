@@ -6,9 +6,16 @@ import { NavLink as Link } from "react-router-dom";
 const RegisterPage = () => {
   const inputs = [
     { text: "email", message: "Must be an email" },
-    { text: "username", message: "" },
-    { text: "password", message: "" },
-    { text: "confirm password", message: "" },
+    { text: "username", message: "Must be at least five characters" },
+    {
+      text: "password",
+      message:
+        "The password must contain a between 8 and thirty characters, at least one letter, one number and one special character.",
+    },
+    {
+      text: "confirm password",
+      message: "",
+    },
   ];
   return (
     <div className="mx-auto bg-nl-darkblue min-h-screen container pt-16">
