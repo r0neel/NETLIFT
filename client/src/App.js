@@ -8,6 +8,7 @@ import {
   RegisterPage,
   Settings,
   ProgramsPage,
+  WorkoutPage,
 } from "./pages";
 
 import { NavBar } from "./components";
@@ -24,9 +25,10 @@ const App = () => {
         <Route path="history" element={<History />} />
         <Route path="progress" element={<Progress />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="workouts" element={<WorkoutPage />} />
       </Routes>
       {location.pathname === "/login" ||
-			location.pathname === "/register" ? null : (
+      location.pathname === "/register" ? null : (
           <NavBar />
         )}
     </>
