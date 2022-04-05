@@ -1,5 +1,4 @@
 const config = require("./webpack.config");
-const Dotenv = require("dotenv-webpack");
 
 config.devServer = {
   historyApiFallback: true,
@@ -7,8 +6,6 @@ config.devServer = {
   liveReload: true,
   open: true,
 };
-
-config.plugins.push(new Dotenv());
 
 config.devtool = "inline-source-map";
 
