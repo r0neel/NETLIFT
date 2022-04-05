@@ -20,23 +20,21 @@ const config = {
     hints: false,
   },
   plugins: [
-    new HtmlWebpackPlugin ({
+    new HtmlWebpackPlugin({
       template: path.join(PUBLIC_DIRECTORY, "index.html"),
       favicon: path.join(PUBLIC_DIRECTORY, "dumbbell.png"),
     }),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
   ],
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         resolve: {
-
           extensions: [".js", ".jsx"],
         },
         exclude: /node_modules/,
         loader: "babel-loader",
-
       },
       {
         test: /\.(css)$/,
@@ -48,7 +46,6 @@ const config = {
       },
     ],
   },
-
 };
 
 module.exports = config;
