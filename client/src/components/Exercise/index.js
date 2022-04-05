@@ -5,7 +5,7 @@ import SetBtn from "../SetBtn";
 const Exercise = ({ name, reps, sets }) => {
   const setsArr = [];
   for (let i = 0; i < sets; i++) {
-    setsArr.push(<SetBtn reps={reps} />);
+    setsArr.push(<SetBtn key={i} reps={reps} />);
   }
   return (
     <div className=" space-y-3">
