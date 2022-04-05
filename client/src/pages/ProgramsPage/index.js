@@ -61,7 +61,7 @@ const ProgramsPage = () => {
 
   // TODO: turn this into a link to the workout page
   return (
-    <div className="bg-nl-darkblue min-h-screen px-8">
+    <div className="bg-nl-darkblue min-h-[calc(100vh-73px)] px-8">
       <Title text="Home" />
       <div className=" space-y-10">
         {trainingDays.map((day) => (
