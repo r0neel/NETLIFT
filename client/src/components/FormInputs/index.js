@@ -8,29 +8,17 @@ const FormInputs = ({ label }) => {
   if (/email/i.test(label.text)) type = "email";
 
   // This is used to control any requirements needed on inputs
-  let email = /email/i.test(label.text);
-  let user = /username/i.test(label.text);
-  let pass = /password/i.test(label.text);
-  let confirmPass = /confirm/i.test(label.text);
+  console.log(label.pattern);
   return (
     <div className="bg-slate-50 relative rounded-xl p-5">
-      {user ? (
+      {label.pattern ? (
         <input
           className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
           type={type}
           name={label.text}
           placeholder=" "
           required
-          minLength={5}
-        />
-      ) : pass ? (
-        <input
-          className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
-          type={type}
-          name={label.text}
-          placeholder=" "
-          required
-          pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$"
+          pattern={label.pattern}
         />
       ) : (
         <input
@@ -55,7 +43,7 @@ const FormInputs = ({ label }) => {
 };
 
 FormInputs.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.object.isRequired,
 };
 
 export default FormInputs;
