@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../static/imgs/logo.png";
+import logo from "../../static/imgs/dumbbell.png";
 import PropTypes from "prop-types";
 
 const Title = ({ text }) => {
