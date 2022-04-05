@@ -8,7 +8,7 @@ const Form = (props) => {
   return (
     <form className="flex flex-col space-y-8 m-10">
       {inputs.map((input) => (
-        <FormInputs key={`${input}_input`} label={input} />
+        <FormInputs key={`${input.text}_input`} label={input} />
       ))}
       <FormBtn text={text} />
     </form>
