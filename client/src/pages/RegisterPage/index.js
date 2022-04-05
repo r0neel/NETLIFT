@@ -23,6 +23,17 @@ const RegisterPage = () => {
       message: "The passwords must match",
     },
   ];
+
+  const register = (e) => {
+    // TODO submit data to server and log person in
+    e.preventDefault();
+    const confirmPass = e.target["confirm password"];
+    const pass = e.target.password;
+    if (confirmPass.value !== pass.value) {
+      confirmPass.value = "";
+      confirmPass.focus();
+    }
+  };
   return (
     <div className="mx-auto bg-nl-darkblue min-h-screen container pt-16">
       <div className="space-y-20">
@@ -30,7 +41,7 @@ const RegisterPage = () => {
           className=" container object-cover h-28 w-80 rounded-full mx-auto"
           src={logo}
         />
-        <Form text="Register" inputs={inputs} />
+        <Form text="Register" inputs={inputs} handleSubmit={register} />
       </div>
       <Link to="/login" className="text-slate-50 mx-auto w-fit block mt-4">
         Already registered?
