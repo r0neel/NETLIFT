@@ -4,11 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-input:focus-within ~ label,
-input:not(:placeholder-shown) ~ label {
+input:not(:placeholder-shown) ~ .registration_form {
   @apply transform scale-75 -translate-y-6 font-bold;
 }
 
-input:focus-within ~ label {
-  @apply text-nl-navblue;
+input:not(:placeholder-shown) ~ .registration_message {
+  @apply text-red-500 font-normal;
 }

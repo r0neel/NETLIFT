@@ -4,11 +4,11 @@ import FormInputs from "../FormInputs";
 import PropTypes from "prop-types";
 
 const Form = (props) => {
-  const { text, inputs } = props;
+  const { text, inputs, handleSubmit } = props;
   return (
-    <form className="flex flex-col space-y-8 m-10">
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-8 m-10">
       {inputs.map((input) => (
-        <FormInputs key={`${input}_input`} label={input} />
+        <FormInputs key={`${input.text}_input`} label={input} />
       ))}
       <FormBtn text={text} />
     </form>
@@ -18,6 +18,7 @@ const Form = (props) => {
 Form.propTypes = {
   text: PropTypes.string.isRequired,
   inputs: PropTypes.array.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default Form;
