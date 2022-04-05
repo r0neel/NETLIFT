@@ -27,10 +27,11 @@ const App = () => {
         <Route path="/progress" element={<Progress />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
-      {location.pathname === "/login" ||
-			location.pathname === "/register" ? null : (
+      { location.pathname === "/login" ||
+			location.pathname === "/register" || 
+      location.pathname === "/create" ? null : (
           <NavBar />
-        )}
+        ) }
     </>
   );
 };
