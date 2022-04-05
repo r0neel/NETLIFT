@@ -9,9 +9,9 @@ const WorkoutPage = () => {
     { name: "Deadlift", reps: 5, sets: 1 },
   ];
   return (
-    <div className="bg-nl-darkblue min-h-screen px-8">
+    <div className="bg-nl-darkblue min-h-[calc(100vh-73px)] px-8 flex flex-col">
       <Title text="Workout" />
-      <div className="-mx-8 px-8 bg-nl-lightgrey space-y-8">
+      <div className="-mx-8 px-8 pt-12 bg-nl-lightgrey space-y-8 flex-auto">
         <WorkoutSection workouts={workouts} />
       </div>
     </div>
