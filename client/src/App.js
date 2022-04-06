@@ -2,12 +2,13 @@ import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 import {
-  History,
   LoginPage,
-  Progress,
   RegisterPage,
-  Settings,
+  Create,
   ProgramsPage,
+  History,
+  Progress,
+  Settings,
   WorkoutPage,
 } from "./pages";
 
@@ -19,18 +20,20 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
-        <Route path="" element={<ProgramsPage />} />
-        <Route path="history" element={<History />} />
-        <Route path="progress" element={<Progress />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="workouts" element={<WorkoutPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/create" element={<Create />} />
+        <Route path="/" element={<ProgramsPage />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/progress" element={<Progress />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/workouts" element={<WorkoutPage />} />
       </Routes>
-      {location.pathname === "/login" ||
-      location.pathname === "/register" ? null : (
+      { location.pathname === "/login" ||
+			location.pathname === "/register" || 
+      location.pathname === "/create" ? null : (
           <NavBar />
-        )}
+        ) }
     </>
   );
 };
