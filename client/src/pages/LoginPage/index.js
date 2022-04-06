@@ -18,7 +18,7 @@ const LoginPage = () => {
   };
   
   return (
-    <div className="mx-auto bg-nl-darkblue min-h-screen container pt-16">
+    <div className="mx-auto bg-nl-darkblue min-h-screen container pt-16 px-8">
       <div className="space-y-20">
         <img
           className=" container object-cover h-28 w-80 rounded-full mx-auto"

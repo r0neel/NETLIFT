@@ -26,14 +26,14 @@ const App = () => {
         <Route path="/" element={<ProgramsPage />} />
         <Route path="/history" element={<History />} />
         <Route path="/progress" element={<Progress />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/settings/*" element={<Settings />} />
         <Route path="/workouts" element={<WorkoutPage />} />
       </Routes>
-      { location.pathname === "/login" ||
-			location.pathname === "/register" || 
+      {location.pathname === "/login" ||
+      location.pathname === "/register" ||
       location.pathname === "/create" ? null : (
           <NavBar />
-        ) }
+        )}
     </>
   );
 };
