@@ -9,32 +9,44 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
+  const linkDefault = "flex flex-col items-center text-nl-darkblue";
   return (
     <>
-      <nav className="bg-nl-lightblue h-73 flex justify-center sticky bottom inset-x-0 bottom-0">
+      <nav className="bg-nl-lightblue h-73 flex justify-center text-nl-darkblue sticky bottom inset-x-0 bottom-0">
         <div id="links" className="justify-center flex space-x-10 pt-3">
           <Link
             to="/"
-            className="flex flex-col items-center"
-            style={({ isActive }) => ({
-              color: isActive ? "nl-navblue" : "nl-darkblue",
-            })}
+            className={({ isActive }) =>
+              isActive ? linkDefault + " text-nl-navblue" : linkDefault
+            }
           >
-            <FontAwesomeIcon
-              className="w-8 h-8 active:nl-navblue"
-              icon={faHouse}
-            />
+            <FontAwesomeIcon className="w-8 h-8" icon={faHouse} />
             <p className="text-xs pt-1">Home</p>
           </Link>
-          <Link to="history" className="flex flex-col items-center">
+          <Link
+            to="history"
+            className={({ isActive }) =>
+              isActive ? linkDefault + " text-nl-navblue" : linkDefault
+            }
+          >
             <FontAwesomeIcon className="w-8 h-8 " icon={faCalendarDays} />
             <p className="text-xs pt-1">History</p>
           </Link>
-          <Link to="progress" className="flex flex-col items-center">
+          <Link
+            to="progress"
+            className={({ isActive }) =>
+              isActive ? linkDefault + " text-nl-navblue" : linkDefault
+            }
+          >
             <FontAwesomeIcon className="w-8 h-8" icon={faChartLine} />
             <p className="text-xs pt-1">Progress</p>
           </Link>
-          <Link to="settings" className="flex flex-col items-center">
+          <Link
+            to="settings"
+            className={({ isActive }) =>
+              isActive ? linkDefault + " text-nl-navblue" : linkDefault
+            }
+          >
             <FontAwesomeIcon className="w-8 h-8" icon={faGear} />
             <p className="text-xs pt-1">Settings</p>
           </Link>
