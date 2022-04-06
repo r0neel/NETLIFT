@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 import { Title } from "../../components";
 import BackSettings from "../../components/BackSettings";
+import SettingsDelete from "./SettingsDelete";
 import SettingsHome from "./SettingsHome";
 import SettingsPassword from "./SettingsPassword";
 import SettingsUnit from "./SettingsUnit";
@@ -20,6 +21,7 @@ const Settings = () => {
         <Route path="/username" element={<SettingsUser />} />
         <Route path="/password" element={<SettingsPassword />} />
         <Route path="/unit" element={<SettingsUnit />} />
+        <Route path="/delete-account" element={<SettingsDelete />} />
       </Routes>
     </div>
   );
