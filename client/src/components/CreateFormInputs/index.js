@@ -37,9 +37,27 @@ const CreateFormInputs = ({ label }) => {
         </>
 
       ) : null
-      
       }
 
+      {label.text === "body part" ? (
+        <>
+          <input
+            className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
+            type={type}
+            name={label.text}
+            id={label.text}
+            list={label.text + "s"}
+            placeholder=" "
+            required
+          />
+          <datalist id={label.text + "s"}>
+            <option>bodypart1</option>
+            <option>bodypart2</option>
+            <option>bodypart3</option>
+          </datalist>
+        </>
+      ) : null
+      } 
 
       {label.text === "weight" ? (
         <div className="flex">
