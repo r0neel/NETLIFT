@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../../../components/Form";
 
-const RegisterPage = () => {
+const SettingsUsername = () => {
   const inputs = [
     {
       text: "username",
@@ -21,4 +21,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default SettingsUsername;
