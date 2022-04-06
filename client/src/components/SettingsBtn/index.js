@@ -6,7 +6,7 @@ const SettingsBtn = ({ text, to }) => {
   return (
     <Link
       to={`/settings/${to}`}
-      className=" bg-nl-lightblue text-nl-darkblue text-xl font-medium py-4 px-8 rounded-xl mx-auto hover:opacity-80"
+      className=" bg-nl-lightblue text-nl-darkblue text-xl font-medium py-4 px-8 rounded-xl mx-auto hover:opacity-80 w-full text-center"
     >
       {text}
     </Link>
