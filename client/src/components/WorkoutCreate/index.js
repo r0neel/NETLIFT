@@ -26,7 +26,8 @@ const WorkoutCreate = () => {
   const inputs = [
     { 
       text: "title",
-      message: "Max thirty characters"
+      message: "Max thirty characters",
+      pattern: ".{0,30}"
     }, 
     { 
       text: "exercise",
