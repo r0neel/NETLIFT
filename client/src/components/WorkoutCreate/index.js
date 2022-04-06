@@ -40,11 +40,17 @@ const WorkoutCreate = () => {
       text: "equipment",
       message: "If you know what you want to use"
     },
+    { 
+      text: "weight",
+      // message: "If you know what you want to use"
+    },
   ];
 
   return(
     <div className="mx-auto bg-nl-darkblue min-h-screen container">
-      <Form text="Create" inputs={inputs}/>
+      <Form text="Create" inputs={inputs}>
+
+      </Form>
       {/* <h1>Exercise constructions 1</h1> */}
       {/* <h1>Select body part</h1> */}
       {/* <h1>Equipment</h1> */}
