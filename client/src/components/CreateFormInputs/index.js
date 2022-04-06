@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 const CreateFormInputs = ({ label }) => {
@@ -15,22 +15,46 @@ const CreateFormInputs = ({ label }) => {
           placeholder=" "
           required
         />
-      ) : (
-        <datalist
-          className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
-          type={type}
-          name={label.text}
-          placeholder=" "
-          required
-        />
-      )}
-      {label.text === "weight" ? (
+      ) : null
+      }
+
+      {label.text === "exercise" ? (
         <>
-          <select>
+          <input
+            className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
+            type={type}
+            name={label.text}
+            id={label.text}
+            list={label.text + "s"}
+            placeholder=" "
+            required
+          />
+          <datalist id={label.text + "s"}>
+            <option>exercise1</option>
+            <option>exercise2</option>
+            <option>exercise3</option>
+          </datalist>
+        </>
+
+      ) : null
+      
+      }
+
+
+      {label.text === "weight" ? (
+        <div className="flex">
+          <input
+            className=" bg-transparent relative z-10 inline w-full appearance-none focus:outline-none text-xl peer"
+            type={type}
+            name={label.text}
+            placeholder=" "
+            required
+          />
+          <select className="">
             <option>kg</option>
             <option>lbs</option>
           </select>
-        </>
+        </div>
       ) : null }
       <label
         className="registration_form duration-300 capitalize origin-0 absolute top-5 text-nl-darkblue text-xl  peer-focus-within:text-nl-navblue peer-focus-within:transform peer-focus-within:scale-75 peer-focus-within:-translate-y-6 peer-focus-within:font-bold"

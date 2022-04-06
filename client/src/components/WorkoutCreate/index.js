@@ -1,7 +1,7 @@
 import React from "react";
 // import axios from "axios";
 
-import Form from "../Form";
+import CreateForm from "../CreateForm";
 
 // TODO: Animate pages so it falls smoothly on page 
 const WorkoutCreate = () => {
@@ -25,7 +25,7 @@ const WorkoutCreate = () => {
 
   const inputs = [
     { 
-      text: "program title",
+      text: "title",
       message: "Max thirty characters"
     }, 
     { 
@@ -52,9 +52,9 @@ const WorkoutCreate = () => {
 
   return(
     <div className="mx-auto bg-nl-darkblue min-h-screen container">
-      <Form text="Create" inputs={inputs}>
+      <CreateForm text="Create" inputs={inputs}>
 
-      </Form>
+      </CreateForm>
       {/* <h1>Exercise constructions 1</h1> */}
       {/* <h1>Select body part</h1> */}
       {/* <h1>Equipment</h1> */}
