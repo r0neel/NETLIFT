@@ -42,7 +42,7 @@ const WorkoutCreate = () => {
     },
     { 
       text: "weight",
-      // message: "If you know what you want to use"
+      message: "Starting weight"
     },
     { 
       text: "reps",
