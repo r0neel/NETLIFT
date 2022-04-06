@@ -59,6 +59,26 @@ const CreateFormInputs = ({ label }) => {
       ) : null
       } 
 
+      {label.text === "equipment" ? (
+        <>
+          <input
+            className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
+            type={type}
+            name={label.text}
+            id={label.text}
+            list={label.text + "s"}
+            placeholder=" "
+            required
+          />
+          <datalist id={label.text + "s"}>
+            <option>equipment1</option>
+            <option>equipment2</option>
+            <option>equipment3</option>
+          </datalist>
+        </>
+      ) : null
+      }   
+
       {label.text === "weight" ? (
         <div className="flex">
           <input
