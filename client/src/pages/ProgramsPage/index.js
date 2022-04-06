@@ -2,13 +2,14 @@ import React from "react";
 import WorkoutPreview from "../../components/WorkoutPreview";
 import dayjs from "dayjs";
 import Title from "../../components/Title";
+import Quote from "../../components/MotivationalQuote";
 
 const ProgramsPage = () => {
   // TODO: replace this with data from redux
   const fakeProgramRes = {
     id: 1,
     training_days: [1, 3, 5],
-    workout: [1, 3],
+    workout: [1, 3]
   };
   const programData = fakeProgramRes;
 
@@ -16,40 +17,40 @@ const ProgramsPage = () => {
     id: 1,
     rep: 5,
     set: 5,
-    exercise_id: 2,
+    exercise_id: 2
   };
 
   const fakelift2 = {
     id: 2,
     rep: 5,
     set: 5,
-    exercise_id: 1,
+    exercise_id: 1
   };
 
   const fakelift3 = {
     id: 3,
     rep: 5,
     set: 5,
-    exercise_id: 3,
+    exercise_id: 3
   };
 
   const fakeExercise1 = {
     id: 1,
-    name: "squat",
+    name: "squat"
   };
   const fakeExercise2 = {
     id: 2,
-    name: "dead lift",
+    name: "dead lift"
   };
   const fakeExercise3 = {
     id: 3,
-    name: "bench",
+    name: "bench"
   };
 
   const exerciseList = [
     { name: fakeExercise1.name, sets: fakelift2.set, reps: fakelift1.rep },
     { name: fakeExercise2.name, sets: fakelift1.set, reps: fakelift1.rep },
-    { name: fakeExercise3.name, sets: fakelift3.set, reps: fakelift3.rep },
+    { name: fakeExercise3.name, sets: fakelift3.set, reps: fakelift3.rep }
   ];
   const today = dayjs();
   const dayOfWeek = today.day();
@@ -63,6 +64,7 @@ const ProgramsPage = () => {
   return (
     <div className="bg-nl-darkblue min-h-[calc(100vh-73px)] px-8">
       <Title text="Home" />
+      <Quote />
       <div className=" space-y-10">
         {trainingDays.map((day) => (
           <WorkoutPreview
