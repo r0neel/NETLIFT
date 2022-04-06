@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Exercise from "../Exercise";
 const WorkoutSection = ({ workouts }) => {
   return (
-    <>
+    <div data-testid="custom-element">
       {workouts.map((workout) => (
         <Exercise
           key={workout.name}
@@ -13,7 +13,7 @@ const WorkoutSection = ({ workouts }) => {
           name={workout.name}
         />
       ))}
-    </>
+    </div>
   );
 };
 
