@@ -29,8 +29,16 @@ const WorkoutCreate = () => {
       message: "Max thirty characters"
     }, 
     { 
+      text: "exercise",
+      message: "If you know what you want to include into your program"
+    },
+    { 
       text: "body part",
-      message: "Start typing to show body part"
+      message: "If you know what you want to focus on"
+    },
+    { 
+      text: "equipment",
+      message: "If you know what you want to use"
     },
   ];
 
