@@ -1,5 +1,22 @@
 import axios from "axios";
 
+export const registerUser = (e) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.post("http://127.0.0.1:5000/register", {
+        username: e.target.username.value,
+        email: e.target.email.value,
+        password: e.target.password.value
+      });
+      if (data.status == 201) {
+        addUser(e);
+      }
+    } catch (err) {
+      return err;
+    }
+  };
+};
+
 export const addUser = (e) => {
   return async (dispatch) => {
     try {
