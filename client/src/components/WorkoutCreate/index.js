@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+// import axios from "axios";
+
+import Form from "../Form";
 
 // TODO: Animate pages so it falls smoothly on page 
 const WorkoutCreate = () => {
-  const [getAllExercises, setGetAllExercises] = useState("");
+  // const [getAllExercises, setGetAllExercises] = useState("");
 
   // const options = {
   //   method: "GET",
@@ -14,20 +16,38 @@ const WorkoutCreate = () => {
   //   },
   // };
 
-  const fetchExercises = async () => {
-    const { data } = axios.get("https://exercisedb.p.rapidapi.com/exercises");
-    setGetAllExercises(data.id);
-  };
+  // const fetchExercises = async () => {
+  //   const { data } = axios.get("https://exercisedb.p.rapidapi.com/exercises");
+  //   setGetAllExercises(data.id);
+  // };
 
-  console.log(fetchExercises);
+  // console.log(fetchExercises);
 
+  const inputs = [
+    { 
+      text: "title",
+      message: "Enter Program Title"
+    }
+  ];
 
   return(
     <div className="mx-auto bg-nl-darkblue min-h-screen container pt-16">
-      <label htmlFor="bodyparts"></label>
+      <h1>Title of Program</h1>
+      <Form text="Create" inputs={inputs}/>
+      {/* <h1>Exercise constructions 1</h1> */}
+      {/* <h1>Select body part</h1> */}
+      {/* <h1>Equipment</h1> */}
+      {/* <h1>Show selected workouts</h1> */}
+      {/* <h1>2</h1> */}
+      {/* <h1>Starting Weight (dropdown weight selectors)</h1> */}
+      {/* <h1>Reps</h1> */}
+      {/* <h1>Frequency</h1> */}
+      {/* <h1>Create Program button</h1> */}
+      {/* <label htmlFor="bodyparts">Body Parts</label>
       <select name="bodyparts" id="bodyparts" className="">
         
       </select>
+      <label htmlFor=""></label> */}
     </div>
   );};
 export default WorkoutCreate;
