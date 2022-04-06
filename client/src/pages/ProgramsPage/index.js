@@ -2,7 +2,7 @@ import React from "react";
 import WorkoutPreview from "../../components/WorkoutPreview";
 import dayjs from "dayjs";
 import Title from "../../components/Title";
-import Quote from "../../components/MotivationalQuote";
+import Quote from "../../components/Quote";
 
 const ProgramsPage = () => {
   // TODO: replace this with data from redux

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { useState } from "react";
 
 const getQuote = async () => {
   const options = {
@@ -11,8 +12,9 @@ const getQuote = async () => {
     }
   };
   try {
-    const quote = await axios.request(options);
-    log;
+    const { data } = await axios.request(options);
+    const quote = data.quote;
+    console.log(quote);
     return quote;
   } catch (err) {
     console.log(err);
@@ -21,9 +23,11 @@ const getQuote = async () => {
 
 const Quote = () => {
   return (
-    <div>
-      <h2>{getQuote}</h2>
-    </div>
+    <>
+      <div>
+        <h2>{getQuote()}</h2>
+      </div>
+    </>
   );
 };
 
