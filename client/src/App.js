@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/history" element={<History />} />
         <Route path="/progress" element={<Progress />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="workouts" element={<WorkoutPage />} />
+        <Route path="/workouts" element={<WorkoutPage />} />
       </Routes>
       { location.pathname === "/login" ||
 			location.pathname === "/register" || 
