@@ -25,14 +25,17 @@ const WorkoutCreate = () => {
 
   const inputs = [
     { 
-      text: "title",
-      message: "Enter Program Title"
-    }
+      text: "program title",
+      message: "Max thirty characters"
+    }, 
+    { 
+      text: "body part",
+      message: "Start typing to show body part"
+    },
   ];
 
   return(
-    <div className="mx-auto bg-nl-darkblue min-h-screen container pt-16">
-      <h1>Title of Program</h1>
+    <div className="mx-auto bg-nl-darkblue min-h-screen container">
       <Form text="Create" inputs={inputs}/>
       {/* <h1>Exercise constructions 1</h1> */}
       {/* <h1>Select body part</h1> */}
