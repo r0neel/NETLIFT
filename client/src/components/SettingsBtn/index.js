@@ -15,7 +15,7 @@ const SettingsBtn = ({ text, to }) => {
 
 SettingsBtn.propTypes = {
   text: PropTypes.string.isRequired,
-  to: PropTypes.text.isRequired,
+  to: PropTypes.string.isRequired,
 };
 
 export default SettingsBtn;
