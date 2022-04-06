@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { Title } from "../../components";
 import BackSettings from "../../components/BackSettings";
 import SettingsHome from "./SettingsHome";
+import SettingsPassword from "./SettingsPassword";
 import SettingsUser from "./SettingsUsername";
 
 const Settings = () => {
@@ -16,6 +17,7 @@ const Settings = () => {
       <Routes>
         <Route path="/" element={<SettingsHome />} />
         <Route path="/username" element={<SettingsUser />} />
+        <Route path="/password" element={<SettingsPassword />} />
       </Routes>
     </div>
   );
