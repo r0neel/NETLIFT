@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Calender from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+// import "react-calendar/dist/Calendar.css";
 import dayjs from "dayjs";
 const CalenderComp = () => {
   const [date, setDate] = useState(new Date());
@@ -12,7 +12,7 @@ const CalenderComp = () => {
 
   return (
     <>
-      <Calender onChange={setDate} value={date} />
+      <Calender className="text-center" onChange={setDate} value={date} />
       <p className="text-center">
         <span className="bold">Selected Date:</span>{" "}
         {dayjsDate.format("D MMM YYYY")}
