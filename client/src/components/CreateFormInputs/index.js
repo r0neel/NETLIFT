@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const CreateFormInputs = ({ label }) => {
@@ -97,13 +97,15 @@ const CreateFormInputs = ({ label }) => {
 
       {label.text === "reps" ? (
         <input
-          className=" bg-transparent relative z-10 inline w-full appearance-none focus:outline-none text-xl peer"
-          type={type}
+          className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
+          type="number"
           name={label.text}
           placeholder=" "
           required
         />
-      ) : null}
+      ) : null
+      }
+
       <label
         className="registration_form duration-300 capitalize origin-0 absolute top-5 text-nl-darkblue text-xl  peer-focus-within:text-nl-navblue peer-focus-within:transform peer-focus-within:scale-75 peer-focus-within:-translate-y-6 peer-focus-within:font-bold"
         htmlFor={label.text}
