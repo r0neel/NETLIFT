@@ -11,3 +11,44 @@ input:not(:placeholder-shown) ~ .registration_form {
 input:not(:placeholder-shown) ~ .registration_message {
   @apply text-red-500 font-normal;
 }
+
+.react-calendar {
+  @apply w-full px-6 text-nl-darkblue text-xl leading-10;
+}
+.react-calendar__month-view__weekdays {
+  @apply text-base font-bold;
+}
+.react-calendar__navigation {
+  @apply flex;
+}
+
+.react-calendar__navigation button {
+  @apply text-nl-navblue text-xl font-bold my-4 px-4 py-2 text-center;
+}
+.react-calendar__navigation button:enabled:hover {
+  @apply bg-nl-lightblue rounded-xl;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+.react-calendar__tile:enabled:hover {
+  @apply text-nl-navblue bg-nl-lightblue rounded-xl;
+}
+.react-calendar__tile--now {
+  @apply font-bold text-nl-navblue;
+}
+
+.react-calendar__tile--active {
+  @apply font-bold text-nl-navblue;
+}
+.react-calendar__year-view__months {
+  @apply text-base leading-8;
+}
+.react-calendar__decade-view__years {
+  @apply text-base leading-8;
+}
+.react-calendar__century-view__decades {
+  @apply text-base leading-10;
+}
