@@ -2,8 +2,11 @@ import React from "react";
 import WorkoutPreview from "../../components/WorkoutPreview";
 import dayjs from "dayjs";
 import Title from "../../components/Title";
+import { useSelector } from "react-redux";
 
 const ProgramsPage = () => {
+  const programs = useSelector(state => state.user);
+  console.log(programs);
   // TODO: replace this with data from redux
   const fakeProgramRes = {
     id: 1,

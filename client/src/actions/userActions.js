@@ -47,6 +47,7 @@ export const fetchProfile = () => {
       const { data } = await axios.get(`${api}/user`, {
         headers: { Authorization: token }
       });
+      
       dispatch({
         type: "LOAD_USER",
         payload: data
