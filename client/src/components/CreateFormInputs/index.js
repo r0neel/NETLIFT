@@ -1,25 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const FormInputs = ({ label }) => {
+const CreateFormInputs = ({ label }) => {
   // This changes the input type based on the field
   let type = "text";
-  if (/password/i.test(label.text)) type = "password";
-  if (/email/i.test(label.text)) type = "email";
-
+ 
   return (
     <div className="bg-slate-50 relative rounded-xl p-5">
-      {label.pattern ? (
+      {label.text === "title" ? (
         <input
           className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
           type={type}
           name={label.text}
           placeholder=" "
           required
-          pattern={label.pattern}
         />
       ) : (
-        <input
+        <datalist
           className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
           type={type}
           name={label.text}
@@ -48,8 +45,8 @@ const FormInputs = ({ label }) => {
   );
 };
 
-FormInputs.propTypes = {
+CreateFormInputs.propTypes = {
   label: PropTypes.object.isRequired,
 };
 
-export default FormInputs;
+export default CreateFormInputs;
