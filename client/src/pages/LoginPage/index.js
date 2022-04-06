@@ -11,7 +11,7 @@ const LoginPage = () => {
     console.log(e.target);
   };
   return (
-    <div className="mx-auto bg-nl-darkblue min-h-[calc(100vh-73px)] container pt-16">
+    <div className="mx-auto bg-nl-darkblue min-h-screen container pt-16">
       <div className="space-y-20">
         <img
           className=" container object-cover h-28 w-80 rounded-full mx-auto"
