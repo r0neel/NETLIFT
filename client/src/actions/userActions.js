@@ -2,23 +2,21 @@ import axios from "axios";
 const api = process.env.API_URL;
 
 export const registerUser = (e) => {
-  return async () => {
+  return async (dispatch) => {
     try {
-      const { data } = await axios.post(`${api}register`, {
+      const { data } = await axios.post(`${api}/register`, {
         username: e.target.username.value,
         email: e.target.email.value,
         password: e.target.password.value
       });
-      console.log(data);
-      await loginUser(e);
+      return dispatch(loginUser(e));
     } catch (err) {
       return err;
     }
   };
 };
 
-export const loginUser = async (e) => {
-  console.log("line 24");
+export const loginUser = (e) => {
   return async (dispatch) => {
     try {
       const username = e.target.username.value;
