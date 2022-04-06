@@ -1,9 +1,10 @@
 import axios from "axios";
+const api = process.env.API_URL;
 
 export const registerUser = (e) => {
-  return async (dispatch) => {
+  return async () => {
     try {
-      const { data } = await axios.post("http://127.0.0.1:5000/register", {
+      const { data } = await axios.post(`${api}register`, {
         username: e.target.username.value,
         email: e.target.email.value,
         password: e.target.password.value
@@ -21,7 +22,7 @@ export const addUser = (e) => {
   return async (dispatch) => {
     try {
       const username = e.target.username.value;
-      const { data } = await axios.post("http://127.0.0.1:5000/login", {
+      const { data } = await axios.post(`${api}/login`, {
         username: e.target.username.value,
         password: e.target.password.value
       });
@@ -45,7 +46,7 @@ export const fetchProfile = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const { data } = await axios.get("http://127.0.0.1:5000/user", {
+      const { data } = await axios.get(`${api}/user`, {
         headers: { Authorization: token }
       });
       dispatch({
