@@ -6,7 +6,7 @@ import SettingsHome from "./SettingsHome";
 
 const Settings = () => {
   return (
-    <div className="bg-nl-darkblue min-h-[calc(100vh-73px)] px-8">
+    <div className="bg-nl-darkblue min-h-[calc(100vh-73px)] px-8 flex flex-col">
       <Title text="Settings" />
       <Routes>
         <Route path="/" element={<SettingsHome />} />
