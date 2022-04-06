@@ -46,7 +46,7 @@ const WorkoutCreate = () => {
     },
     { 
       text: "reps",
-      // message: "If you know what you want to use"
+      message: "If you know what you want to use"
     },
   ];
 
