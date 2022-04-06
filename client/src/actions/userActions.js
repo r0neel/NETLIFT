@@ -9,16 +9,16 @@ export const registerUser = (e) => {
         email: e.target.email.value,
         password: e.target.password.value
       });
-      if (data.status == 201) {
-        addUser(e);
-      }
+      console.log(data);
+      await loginUser(e);
     } catch (err) {
       return err;
     }
   };
 };
 
-export const addUser = (e) => {
+export const loginUser = async (e) => {
+  console.log("line 24");
   return async (dispatch) => {
     try {
       const username = e.target.username.value;
