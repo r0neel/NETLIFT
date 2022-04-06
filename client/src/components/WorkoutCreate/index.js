@@ -44,6 +44,10 @@ const WorkoutCreate = () => {
       text: "weight",
       // message: "If you know what you want to use"
     },
+    { 
+      text: "reps",
+      // message: "If you know what you want to use"
+    },
   ];
 
   return(

@@ -9,39 +9,6 @@ const FormInputs = ({ label }) => {
 
   return (
     <div className="bg-slate-50 relative rounded-xl p-5">
-      {/* if ({label.pattern}) {
-        <input
-          className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
-          type={type}
-          name={label.text}
-          placeholder=" "
-          required
-          pattern={label.pattern}
-        />
-      } else if ({label.text === "weight"}) {
-        <div className="inline">
-          <input
-            className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
-            type={type}
-            name={label.text}
-            placeholder=" "
-            required
-          />
-          <select>
-            <option>kg</option>
-            <option>lbs</option>
-          </select>
-
-        </div>
-      } else {
-        <input
-          className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
-          type={type}
-          name={label.text}
-          placeholder=" "
-          required
-        />
-      } */}
       {label.pattern ? (
         <input
           className="bg-transparent relative z-10 block w-full appearance-none focus:outline-none text-xl peer"
@@ -60,18 +27,15 @@ const FormInputs = ({ label }) => {
           required
         />
       )}
-      {/* {label.text === "weight" ? (
+      {label.text === "weight" ? (
         <>
-          <input
-            className="bg-transparent relative z-10 inline-block w-full appearance-none focus:outline-none text-xl peer"
-            type={type}
-            name={label.text}
-            placeholder=" "
-            required
-          />
-         
+          
+          <select>
+            <option>kg</option>
+            <option>lbs</option>
+          </select>
         </>
-      ) : null } */}
+      ) : null }
       <label
         className="registration_form duration-300 capitalize origin-0 absolute top-5 text-nl-darkblue text-xl  peer-focus-within:text-nl-navblue peer-focus-within:transform peer-focus-within:scale-75 peer-focus-within:-translate-y-6 peer-focus-within:font-bold"
         htmlFor={label.text}
