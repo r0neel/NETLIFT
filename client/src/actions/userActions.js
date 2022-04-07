@@ -6,7 +6,7 @@ const loading = (text) => ({ type: "LOADING", payload: text });
 export const registerUser = (e) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(`${api}/register`, {
+      const { data } = await axios.post(`${api}register`, {
         username: e.target.username.value,
         email: e.target.email.value,
         password: e.target.password.value,
@@ -22,7 +22,7 @@ export const loginUser = (e) => {
   return async (dispatch) => {
     try {
       const username = e.target.username.value;
-      const { data } = await axios.post(`${api}/login`, {
+      const { data } = await axios.post(`${api}login`, {
         username: e.target.username.value,
         password: e.target.password.value,
       });
@@ -47,7 +47,7 @@ export const fetchProfile = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const { data } = await axios.get(`${api}/user`, {
+      const { data } = await axios.get(`${api}user`, {
         headers: { Authorization: token },
       });
 
@@ -104,16 +104,21 @@ export const getQuote = async () => {
   }
 };
 
-export const updateLifts = (liftsData) => {
+export const updateLifts = (exName) => {
   return async (dispatch) => {
     try {
-      const token = localStorage.getItem("token");
-      console.log(liftsData);
+      // const token = localStorage.getItem("token");
+      // console.log(liftsData);
 
-      const { data } = await axios.post(`${api}lifts`, liftsData, {
-        headers: { Authorization: token },
+      // const { data } = await axios.post(`${api}lifts`, liftsData, {
+      //   headers: { Authorization: token },
+      // });
+      // console.log(data)
+
+      dispatch({
+        type: "LOAD_EXERCISES",
+        payload: exName,
       });
-
     } catch (err) {
       dispatch({
         type: "SET_ERROR",

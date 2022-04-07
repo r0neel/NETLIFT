@@ -4,12 +4,18 @@ import SelectEquipment from "../SelectEquipmemt";
 import SelectSets from "../SelectSets";
 import SelectTarget from "../SelectTarget";
 import SelectExercise from "../SelectExercise";
+import { useDispatch } from "react-redux";
+import { updateLifts } from "../../../actions/userActions";
 
 // TODO: Animate pages so it falls smoothly on page
 const WorkoutCreate = () => {
+  const dispatch = useDispatch()
   const [exercises, setExercises] = useState();
   const [reps, setReps] = useState();
   const [sets, setSets] = useState();
+  // { name: "Squats", reps: 5, sets: 5 },
+  //   { name: "OHP", reps: 3, sets: 5 },
+  //   { name: "Deadlift", reps: 3, sets: 1 },
 
   const reset = () => {
     setExercises(null);
@@ -17,6 +23,14 @@ const WorkoutCreate = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    const ex = e.currentTarget.exercise.value;
+    const exObj = {
+      name: ex,
+      reps: reps,
+      sets: sets,
+    };
+
+    dispatch(updateLifts(exObj));
   };
 
   const loadExercises = async (e) => {
@@ -31,6 +45,7 @@ const WorkoutCreate = () => {
       setReps(repsVal);
       const queryString = `${process.env.API_URL}exercises?bodyPart=${target}&equipment=${equipment}`;
       const { data } = await axios.get(queryString);
+      console.log(data);
       setExercises(data);
     } catch (e) {
       alert("We don't have any exercises matching that criteria");
