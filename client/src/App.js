@@ -33,10 +33,12 @@ const App = () => {
         <Route path="/test" element={<CreateProgram />} />
       </Routes>
 
-      {location.pathname === "/login" ||
-      location.pathname === "/register" ? null : (
-        <NavBar />
-      )}
+      {location.pathname === "/create" ||
+      location.pathname === "/" ||
+      location.pathname === "/history" ||
+      location.pathname == "/settings" ||
+      location.pathname === "/workouts" ? (<NavBar />) : 
+      null}
     </div>
   );
 };
