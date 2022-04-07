@@ -2,10 +2,17 @@ import React from "react";
 import WorkoutPreview from "../../components/WorkoutPreview";
 import dayjs from "dayjs";
 import Title from "../../components/Title";
-import Quote from "../../components/Quote";
+import { getQuote } from "../../actions/userActions";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const ProgramsPage = () => {
   // TODO: replace this with data from redux
+  const [quote, setQuote] = useState("");
+  const token = useSelector((state) => state.token);
+  useEffect(async () => {
+    setQuote(await getQuote());
+  }, [token]);
   const fakeProgramRes = {
     id: 1,
     training_days: [1, 3, 5],
@@ -64,7 +71,7 @@ const ProgramsPage = () => {
   return (
     <div className="bg-nl-darkblue min-h-[calc(100vh-73px)] px-8">
       <Title text="Home" />
-      <Quote />
+      <h2 className=" text-slate-50 text-2xl font-bold italic py-4">{quote}</h2>
       <div className=" space-y-10">
         {trainingDays.map((day) => (
           <WorkoutPreview
