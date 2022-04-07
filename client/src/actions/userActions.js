@@ -110,7 +110,7 @@ export const updateLifts = (liftsData) => {
       const token = localStorage.getItem("token");
       console.log(liftsData);
 
-      const { data } = await axios.patch(`${api}user`, liftsData, {
+      const { data } = await axios.post(`${api}lifts`, liftsData, {
         headers: { Authorization: token },
       });
 
