@@ -6,10 +6,12 @@ import SelectTarget from "../SelectTarget";
 import SelectExercise from "../SelectExercise";
 import { useDispatch } from "react-redux";
 import { updateLifts } from "../../../actions/userActions";
+import { useNavigate } from "react-router-dom";
 
 // TODO: Animate pages so it falls smoothly on page
 const WorkoutCreate = () => {
   const dispatch = useDispatch()
+  const nav = useNavigate()
   const [exercises, setExercises] = useState();
   const [reps, setReps] = useState();
   const [sets, setSets] = useState();
@@ -52,6 +54,11 @@ const WorkoutCreate = () => {
     }
   };
 
+  const handleNav = (e) => {
+    e.preventDefault()
+    nav("/create", { replace: true });
+  }
+
   return (
     <div className="mx-auto container mt-4 text-nl-darkblue p-8">
       <h2 className=" text-center text-2xl pb-8">
@@ -74,7 +81,13 @@ const WorkoutCreate = () => {
       </form>
       {exercises && (
         <SelectExercise data={exercises} submitExercise={submitHandler} />
-      )}
+        )}
+        <input
+            className=" bg-nl-lightblue text-nl-darkblue text-2xl font-medium py-4 px-16 rounded-xl mx-auto hover:opacity-80"
+            type="button"
+            value="confirm workout"
+            onClick={e => handleNav(e)}
+          />
     </div>
   );
 };
