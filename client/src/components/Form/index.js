@@ -6,7 +6,11 @@ import PropTypes from "prop-types";
 const Form = (props) => {
   const { text, inputs, handleSubmit } = props;
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col space-y-8">
+    <form
+      role="form"
+      onSubmit={handleSubmit}
+      className="flex flex-col space-y-8"
+    >
       {inputs.map((input) => (
         <FormInputs key={`${input.text}_input`} label={input} />
       ))}
