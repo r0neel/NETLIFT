@@ -107,13 +107,6 @@ export const getQuote = async () => {
 export const updateLifts = (exName) => {
   return async (dispatch) => {
     try {
-      // const token = localStorage.getItem("token");
-      // console.log(liftsData);
-
-      // const { data } = await axios.post(`${api}lifts`, liftsData, {
-      //   headers: { Authorization: token },
-      // });
-      // console.log(data)
 
       dispatch({
         type: "LOAD_EXERCISES",
