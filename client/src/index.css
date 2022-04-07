@@ -25,19 +25,13 @@ input:not(:placeholder-shown) ~ .registration_message {
 .react-calendar__navigation button {
   @apply text-nl-navblue text-xl font-bold my-4 px-4 py-2 text-center;
 }
-.react-calendar__navigation button:enabled:hover {
-  @apply bg-nl-lightblue rounded-xl;
-}
 
 abbr[title] {
   text-decoration: none;
 }
 
-.react-calendar__tile:enabled:hover {
-  @apply text-nl-navblue bg-nl-lightblue rounded-xl;
-}
 .react-calendar__tile--now {
-  @apply font-bold text-nl-navblue;
+  @apply font-bold text-red-500;
 }
 
 .react-calendar__tile--active {
