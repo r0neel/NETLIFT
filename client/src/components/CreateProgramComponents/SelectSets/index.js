@@ -4,7 +4,7 @@ const SelectSets = ({ name, max }) => {
   return (
     <>
       <label htmlFor={name}>How many {name} would you like to do?</label>
-      <input name={name} id={name} type="number" min={1} max={max} />
+      <input required name={name} id={name} type="number" min={1} max={max} />
     </>
   );
 };

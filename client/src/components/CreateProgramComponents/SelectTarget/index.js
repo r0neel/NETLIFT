@@ -16,7 +16,7 @@ const SelectTarget = () => {
   return (
     <>
       <label htmlFor="target">Select the body part you want to target</label>
-      <select name="target" id="target">
+      <select required name="target" id="target">
         {bodyParts.sort().map((part) => (
           <option key={`bodyPart_${part}`} value={part}>
             {part}

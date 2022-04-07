@@ -13,7 +13,7 @@ const SelectEquipment = () => {
   return (
     <>
       <label htmlFor="equipment">Select the equipment you want to use</label>
-      <select name="equipment" id="equipment">
+      <select required name="equipment" id="equipment">
         {equipment.sort().map((part) => (
           <option key={`equipment_${part}`} value={part}>
             {part}
