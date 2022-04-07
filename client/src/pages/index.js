@@ -5,5 +5,5 @@ export { default as Settings } from "./Settings";
 export { default as ProgramsPage } from "./ProgramsPage";
 export { default as Create } from "./Create";
 export { default as WorkoutPage } from "./WorkoutPage";
-export { default as Err404 } from './Err404'
-
+export { default as Err404 } from "./Err404";
+export { default as CreateProgram } from "./CreateProgram";
