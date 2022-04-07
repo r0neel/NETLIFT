@@ -71,8 +71,14 @@ export const updateUser = (updateCase)=> {
         headers: { Authorization: token }
       });
       console.log(data);
-      
 
+      if (data) {
+        dispatch({
+          type: "LOGOUT",
+          payload: true
+        });
+      }
+        
     } catch (err) {
       dispatch({
         type: "SET_ERROR",

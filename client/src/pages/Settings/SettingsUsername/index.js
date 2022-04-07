@@ -1,10 +1,11 @@
 import React from "react";
 import Form from "../../../components/Form";
-import { useDispatch} from "react-redux";
-import { updateUser } from "../../../actions/userActions";
+import { useDispatch, useSelector} from "react-redux";
+import { updateUser} from "../../../actions/userActions";
 
 const SettingsUsername = () => {
   const dispatch = useDispatch();
+  const loggedOut = useSelector( state=> state.logout);
   const inputs = [
     {
       text: "username",
@@ -18,6 +19,9 @@ const SettingsUsername = () => {
     e.preventDefault();
     const data = {"username": e.target.username.value};
     dispatch(updateUser(data));
+    if (loggedOut === true){
+      alert("username has been changed please signin with new username");
+    }
   };
   return (
     <div className="pt-8">
