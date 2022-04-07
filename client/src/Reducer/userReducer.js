@@ -8,6 +8,9 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "LOADING": {
+      return { ...state, loading: true, profile: action.payload };
+    }
     case "LOAD_USER": {
       const profile = action.payload;
       return { ...state, profile: profile, loading: false };
@@ -20,9 +23,6 @@ const userReducer = (state = initialState, action) => {
     case "LOGOUT": {
       const isLoggedOut = action.payload;
       return { ...state, logout: isLoggedOut };
-    }
-    case "LOADING": {
-      return { ...state, loading: true };
     }
     default:
       return state;
