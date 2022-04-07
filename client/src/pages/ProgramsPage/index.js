@@ -4,13 +4,20 @@ import dayjs from "dayjs";
 import Title from "../../components/Title";
 import { getQuote } from "../../actions/userActions";
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ProgramsPage = () => {
-  const programs = useSelector(state => state.profile);
+  const programs = useSelector((state) => state.profile);
   console.log(programs._programs);
   console.log(programs._lifts);
+  const lsToken = localStorage.getItem("token");
+  const nav = useNavigate();
+  useEffect(() => {
+    if (lsToken == null) {
+      nav("/login", { replace: true });
+    }
+  });
   // TODO: replace this with data from redux
   const [quote, setQuote] = useState("");
   const token = useSelector((state) => state.token);

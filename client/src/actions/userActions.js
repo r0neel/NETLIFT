@@ -47,7 +47,7 @@ export const fetchProfile = () => {
       const { data } = await axios.get(`${api}/user`, {
         headers: { Authorization: token }
       });
-      
+
       dispatch({
         type: "LOAD_USER",
         payload: data
@@ -61,33 +61,34 @@ export const fetchProfile = () => {
   };
 };
 
-
-export const updateUser = (updateCase)=> {
+export const updateUser = (updateCase) => {
   return async (dispatch) => {
-    try{
+    try {
       const token = localStorage.getItem("token");
       console.log(updateCase);
 
       const { data } = await axios.patch(`${api}/user`, updateCase, {
         headers: { Authorization: token }
       });
-      console.log(data);
 
       if (data) {
         dispatch({
           type: "LOGOUT",
           payload: true
         });
+        localStorage.removeItem("token");
+        alert(
+          "Username has been changed, you have been logged out. \n Please refresh and sign in with the new username"
+        );
       }
-        
     } catch (err) {
       dispatch({
         type: "SET_ERROR",
         payload: err
       });
     }
-
   };
+};
 
 export const getQuote = async () => {
   try {
@@ -98,5 +99,4 @@ export const getQuote = async () => {
   } catch (err) {
     console.log(err);
   }
-
 };
