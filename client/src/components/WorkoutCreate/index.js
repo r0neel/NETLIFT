@@ -30,24 +30,8 @@ const WorkoutCreate = () => {
       pattern: ".{0,30}"
     }, 
     { 
-      text: "exercise",
-      message: "If you know what you want to include into your program"
-    },
-    { 
-      text: "body part",
-      message: "If you know what you want to focus on"
-    },
-    { 
-      text: "equipment",
-      message: "If you know what you want to use"
-    },
-    { 
       text: "weight",
       message: "Starting weight"
-    },
-    { 
-      text: "reps",
-      message: "How many reps per exercise"
     },
   ];
 
