@@ -61,6 +61,7 @@ export const fetchProfile = () => {
   };
 };
 
+
 export const updateUser = (updateCase)=> {
   return async (dispatch) => {
     try{
@@ -87,4 +88,15 @@ export const updateUser = (updateCase)=> {
     }
 
   };
+
+export const getQuote = async () => {
+  try {
+    const { data } = await axios.get("https://type.fit/api/quotes");
+    const randomNumber = Math.floor(Math.random() * 1643);
+    const quote = data[randomNumber].text;
+    return quote;
+  } catch (err) {
+    console.log(err);
+  }
+
 };
