@@ -1,6 +1,8 @@
 import axios from "axios";
 const api = process.env.API_URL;
 
+const loading = (text) => ({ type: "LOADING", payload: text });
+
 export const registerUser = (e) => {
   return async (dispatch) => {
     try {
@@ -41,6 +43,7 @@ export const loginUser = (e) => {
 
 export const fetchProfile = () => {
   return async (dispatch) => {
+    dispatch(loading("getting programs"));
     try {
       const token = localStorage.getItem("token");
 
