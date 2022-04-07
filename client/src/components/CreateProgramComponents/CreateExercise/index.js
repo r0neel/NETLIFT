@@ -14,6 +14,7 @@ const WorkoutCreate = () => {
   const reset = () => {
     setExercises(null);
   };
+
   const loadExercises = async (e) => {
     e.preventDefault();
     try {
@@ -33,15 +34,24 @@ const WorkoutCreate = () => {
   };
 
   return (
-    <div className="mx-auto min-h-screen container pt-16">
-      <form onSubmit={loadExercises} onChange={reset}>
+    <div className="mx-auto container mt-6 text-nl-darkblue p-8">
+      <h2 className=" text-center text-2xl pb-4">
+        Here you can choose an exercise to add
+      </h2>
+      <form
+        onSubmit={loadExercises}
+        onChange={reset}
+        className="flex flex-col text-lg space-y-6"
+      >
         <SelectTarget />
         <SelectEquipment />
         <SelectSets name={"sets"} max={20} />
         <SelectSets name={"reps"} />
         <input type="submit" value="Find exercises" />
       </form>
-      {exercises && <SelectExercise data={exercises} />}
+      {exercises && (
+        <SelectExercise data={exercises} submitExercise={submitHandler} />
+      )}
     </div>
   );
 };

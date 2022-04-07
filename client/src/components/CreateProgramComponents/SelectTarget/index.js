@@ -14,7 +14,7 @@ const SelectTarget = () => {
     "waist",
   ];
   return (
-    <>
+    <div className="flex flex-col">
       <label htmlFor="target">Select the body part you want to target:</label>
       <select
         className="mt-3 bg-nl-darkblue text-slate-50 text-xl py-2 px-4 rounded-xl"
@@ -28,7 +28,7 @@ const SelectTarget = () => {
           </option>
         ))}
       </select>
-    </>
+    </div>
   );
 };
 
