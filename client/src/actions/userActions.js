@@ -60,3 +60,25 @@ export const fetchProfile = () => {
     }
   };
 };
+
+export const updateUser = (updateCase)=> {
+  return async (dispatch) => {
+    try{
+      const token = localStorage.getItem("token");
+      console.log(updateCase);
+
+      const { data } = await axios.patch(`${api}/user`, updateCase, {
+        headers: { Authorization: token }
+      });
+      console.log(data);
+      
+
+    } catch (err) {
+      dispatch({
+        type: "SET_ERROR",
+        payload: err
+      });
+    }
+
+  };
+};

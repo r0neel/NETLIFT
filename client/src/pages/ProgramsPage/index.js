@@ -5,8 +5,9 @@ import Title from "../../components/Title";
 import { useSelector } from "react-redux";
 
 const ProgramsPage = () => {
-  const programs = useSelector(state => state.user);
-  console.log(programs);
+  const programs = useSelector(state => state.profile);
+  console.log(programs._programs);
+  console.log(programs._lifts);
   // TODO: replace this with data from redux
   const fakeProgramRes = {
     id: 1,

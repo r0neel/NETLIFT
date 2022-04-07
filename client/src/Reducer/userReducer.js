@@ -7,8 +7,7 @@ const initialState = {
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
   case "LOAD_USER": {
-    const profile = action.payload;
-    console.log(profile)
+    const profile = action.payload;    
     return { ...state, profile: profile };
   }
   case "LOGIN": {
