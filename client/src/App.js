@@ -30,8 +30,7 @@ const App = () => {
         <Route path="/workouts" element={<WorkoutPage />} />
       </Routes>
       {location.pathname === "/login" ||
-      location.pathname === "/register" ||
-      location.pathname === "/create" ? null : (
+      location.pathname === "/register" ? null : (
           <NavBar />
         )}
     </>
