@@ -52,7 +52,7 @@ const WorkoutCreate = () => {
   ];
 
   return(
-    <div className="mx-auto bg-nl-darkblue min-h-screen container px-8 pt-16">
+    <div className="mx-auto min-h-screen container pt-16">
       <CreateForm text="Create" inputs={inputs}>
 
       </CreateForm>

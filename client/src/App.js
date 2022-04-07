@@ -9,7 +9,7 @@ import {
   History,
   Err404,
   Settings,
-  WorkoutPage
+  WorkoutPage,
 } from "./pages";
 
 import { NavBar } from "./components";
@@ -19,7 +19,7 @@ const App = () => {
   console.log(location);
 
   return (
-    <div className="bg-nl-darkblue min-h-screen">
+    <div data-testid="test-app" className="bg-nl-darkblue min-h-screen">
       <Routes>
         <Route path="*" element={<Err404 />}/>
         <Route path="/login" element={<LoginPage />} />
