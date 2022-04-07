@@ -18,7 +18,7 @@ const App = () => {
   let location = useLocation();
 
   return (
-    <>
+    <div className="bg-nl-darkblue">
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -33,7 +33,7 @@ const App = () => {
       location.pathname === "/register" ? null : ( */}
           <NavBar />
         {/* )} */}
-    </>
+    </div>
   );
 };
 

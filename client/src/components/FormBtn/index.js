@@ -11,6 +11,7 @@ const FormBtn = ({ text }) => {
 
 FormBtn.propTypes = {
   text: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
 
 export default FormBtn;
