@@ -15,9 +15,6 @@ const WorkoutCreate = () => {
   const [exercises, setExercises] = useState();
   const [reps, setReps] = useState();
   const [sets, setSets] = useState();
-  // { name: "Squats", reps: 5, sets: 5 },
-  //   { name: "OHP", reps: 3, sets: 5 },
-  //   { name: "Deadlift", reps: 3, sets: 1 },
 
   const reset = () => {
     setExercises(null);
