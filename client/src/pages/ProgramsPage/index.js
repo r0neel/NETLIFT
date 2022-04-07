@@ -8,9 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProgramsPage = () => {
-  const programs = useSelector((state) => state.profile);
-  const loading = useSelector((state) => state.loading);
-
+  const programs = useSelector((state) => state.user.profile);
+  const loading = useSelector((state) => state.user.loading);
   const dispatch = useDispatch();
   const getProgramData = () => dispatch(fetchProfile());
 

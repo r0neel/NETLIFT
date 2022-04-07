@@ -8,8 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 const LoginPage = () => {
   const dispatch = useDispatch();
   const nav = useNavigate();
+  const user = useSelector( state => state.user.user)
   const inputs = [{ text: "username" }, { text: "password" }];
-  const userState = useSelector((state) => state.user);
 
   const login = (e) => {
     e.preventDefault();
