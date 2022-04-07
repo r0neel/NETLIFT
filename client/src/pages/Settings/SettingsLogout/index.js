@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SettingsLogout = () => {
+  const nav = useNavigate();
   const handleClick = (e) => {
-    // TODO log out of account and redirect to login page
     e.preventDefault();
+    localStorage.removeItem("token");
+    nav("/login", { replace: true });
   };
   return (
     <div className="pt-10 flex flex-col space-y-8">
