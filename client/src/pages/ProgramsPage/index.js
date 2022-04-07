@@ -4,9 +4,13 @@ import dayjs from "dayjs";
 import Title from "../../components/Title";
 import { getQuote } from "../../actions/userActions";
 import { useEffect, useState } from "react";
+
 import { useSelector } from "react-redux";
 
 const ProgramsPage = () => {
+  const programs = useSelector(state => state.profile);
+  console.log(programs._programs);
+  console.log(programs._lifts);
   // TODO: replace this with data from redux
   const [quote, setQuote] = useState("");
   const token = useSelector((state) => state.token);
