@@ -18,7 +18,7 @@ const App = () => {
   let location = useLocation();
 
   return (
-    <>
+    <div className="bg-nl-darkblue">
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -29,9 +29,9 @@ const App = () => {
         <Route path="/settings/*" element={<Settings />} />
         <Route path="/workouts" element={<WorkoutPage />} />
       </Routes>
+
       {location.pathname === "/login" ||
-      location.pathname === "/register" ||
-      location.pathname === "/create" ? null : (
+      location.pathname === "/register" ? null : (
         <NavBar />
       )}
     </>

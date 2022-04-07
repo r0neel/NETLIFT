@@ -10,7 +10,7 @@ const CreateForm = (props) => {
       {inputs.map((input) => (
         <CreateFormInputs key={`${input.text}_input`} label={input} />
       ))}
-      <FormBtn text={text} />
+      <FormBtn className="mb-10" text={text} />
     </form>
   );
 };
