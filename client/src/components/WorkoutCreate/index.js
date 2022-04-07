@@ -30,24 +30,8 @@ const WorkoutCreate = () => {
       pattern: ".{0,30}"
     }, 
     { 
-      text: "exercise",
-      message: "If you know what you want to include into your program"
-    },
-    { 
-      text: "body part",
-      message: "If you know what you want to focus on"
-    },
-    { 
-      text: "equipment",
-      message: "If you know what you want to use"
-    },
-    { 
       text: "weight",
       message: "Starting weight"
-    },
-    { 
-      text: "reps",
-      message: "How many reps per exercise"
     },
   ];
 
@@ -56,20 +40,6 @@ const WorkoutCreate = () => {
       <CreateForm text="Create" inputs={inputs}>
 
       </CreateForm>
-      {/* <h1>Exercise constructions 1</h1> */}
-      {/* <h1>Select body part</h1> */}
-      {/* <h1>Equipment</h1> */}
-      {/* <h1>Show selected workouts</h1> */}
-      {/* <h1>2</h1> */}
-      {/* <h1>Starting Weight (dropdown weight selectors)</h1> */}
-      {/* <h1>Reps</h1> */}
-      {/* <h1>Frequency</h1> */}
-      {/* <h1>Create Program button</h1> */}
-      {/* <label htmlFor="bodyparts">Body Parts</label>
-      <select name="bodyparts" id="bodyparts" className="">
-        
-      </select>
-      <label htmlFor=""></label> */}
     </div>
   );};
 export default WorkoutCreate;
