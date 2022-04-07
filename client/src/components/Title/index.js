@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const Title = ({ text }) => {
   return (
-    <header className="flex justify-between items-center pt-6 pb-10">
+    <header className="flex justify-between items-center pt-6 pb-4">
       <Link to="/">
         <img className="object-cover w-20 h-12 rounded-full" src={logo} />
       </Link>

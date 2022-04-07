@@ -9,7 +9,6 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const nav = useNavigate();
   const inputs = [{ text: "username" }, { text: "password" }];
-  const userState = useSelector((state) => state.user);
 
   const login = (e) => {
     e.preventDefault();
