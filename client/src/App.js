@@ -25,18 +25,20 @@ const App = () => {
         <Route path="*" element={<Err404 />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/create" element={<Create />} />
+        <Route path="/create/*" element={<Create />} />
         <Route path="/" element={<ProgramsPage />} />
         <Route path="/history" element={<History />} />
         <Route path="/settings/*" element={<Settings />} />
         <Route path="/workouts" element={<WorkoutPage />} />
-        <Route path="/test" element={<CreateProgram />} />
+        <Route path="/create/workout" element={<CreateProgram />} />
       </Routes>
 
-      {location.pathname === "/login" ||
-      location.pathname === "/register" ? null : (
-        <NavBar />
-      )}
+      {location.pathname === "/create" ||
+      location.pathname === "/" ||
+      location.pathname === "/history" ||
+      location.pathname == "/settings" ||
+      location.pathname === "/workouts" ? (<NavBar />) : 
+      null}
     </div>
   );
 };
