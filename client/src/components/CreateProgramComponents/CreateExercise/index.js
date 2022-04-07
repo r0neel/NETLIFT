@@ -4,12 +4,20 @@ import SelectEquipment from "../SelectEquipmemt";
 import SelectSets from "../SelectSets";
 import SelectTarget from "../SelectTarget";
 import SelectExercise from "../SelectExercise";
+import { useDispatch } from "react-redux";
+import { updateLifts } from "../../../actions/userActions";
+import { useNavigate } from "react-router-dom";
 
 // TODO: Animate pages so it falls smoothly on page
 const WorkoutCreate = () => {
+  const dispatch = useDispatch()
+  const nav = useNavigate()
   const [exercises, setExercises] = useState();
   const [reps, setReps] = useState();
   const [sets, setSets] = useState();
+  // { name: "Squats", reps: 5, sets: 5 },
+  //   { name: "OHP", reps: 3, sets: 5 },
+  //   { name: "Deadlift", reps: 3, sets: 1 },
 
   const reset = () => {
     setExercises(null);
@@ -17,6 +25,14 @@ const WorkoutCreate = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    const ex = e.currentTarget.exercise.value;
+    const exObj = {
+      name: ex,
+      reps: reps,
+      sets: sets,
+    };
+
+    dispatch(updateLifts(exObj));
   };
 
   const loadExercises = async (e) => {
@@ -31,11 +47,17 @@ const WorkoutCreate = () => {
       setReps(repsVal);
       const queryString = `${process.env.API_URL}exercises?bodyPart=${target}&equipment=${equipment}`;
       const { data } = await axios.get(queryString);
+      console.log(data);
       setExercises(data);
     } catch (e) {
       alert("We don't have any exercises matching that criteria");
     }
   };
+
+  const handleNav = (e) => {
+    e.preventDefault()
+    nav("/create", { replace: true });
+  }
 
   return (
     <div className="mx-auto container mt-4 text-nl-darkblue p-8">
@@ -59,7 +81,13 @@ const WorkoutCreate = () => {
       </form>
       {exercises && (
         <SelectExercise data={exercises} submitExercise={submitHandler} />
-      )}
+        )}
+        <input
+            className=" bg-nl-lightblue text-nl-darkblue text-2xl font-medium py-4 px-16 rounded-xl mx-auto hover:opacity-80"
+            type="button"
+            value="confirm workout"
+            onClick={e => handleNav(e)}
+          />
     </div>
   );
 };
