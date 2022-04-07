@@ -15,6 +15,10 @@ const WorkoutCreate = () => {
     setExercises(null);
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
   const loadExercises = async (e) => {
     e.preventDefault();
     try {
