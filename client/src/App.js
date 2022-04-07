@@ -9,7 +9,7 @@ import {
   History,
   Progress,
   Settings,
-  WorkoutPage,
+  WorkoutPage
 } from "./pages";
 
 import { NavBar } from "./components";
@@ -32,8 +32,8 @@ const App = () => {
       {location.pathname === "/login" ||
       location.pathname === "/register" ||
       location.pathname === "/create" ? null : (
-          <NavBar />
-        )}
+        <NavBar />
+      )}
     </>
   );
 };
