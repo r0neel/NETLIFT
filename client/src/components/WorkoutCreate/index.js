@@ -2,6 +2,7 @@ import React from "react";
 // import axios from "axios";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 // TODO: Animate pages so it falls smoothly on page 
 
 // TODO: Make an add exercise button that links to /test route
@@ -18,9 +19,9 @@ const WorkoutCreate = () => {
       role="form"
       className="flex flex-col space-y-8"
     >
-      <div className="">
+      <Link to="workout" className="">
         <FontAwesomeIcon className="w-8 h-8" icon={faPlus}></FontAwesomeIcon>
-      </div>
+      </Link>
 
       <button className=" bg-nl-lightblue text-nl-darkblue text-2xl font-medium py-4 px-16 rounded-xl mx-auto hover:opacity-80">
       Create
