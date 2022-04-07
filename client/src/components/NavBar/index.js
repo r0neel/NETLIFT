@@ -33,13 +33,13 @@ const NavBar = () => {
             <p className="text-xs pt-1">History</p>
           </Link>
           <Link
-            to="progress"
+            to="create"
             className={({ isActive }) =>
               isActive ? linkDefault + " text-nl-navblue" : linkDefault
             }
           >
             <FontAwesomeIcon className="w-8 h-8" icon={faPlus} />
-            <p className="text-xs pt-1">Progress</p>
+            <p className="text-xs pt-1">Create</p>
           </Link>
           <Link
             to="settings"
