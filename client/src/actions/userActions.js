@@ -61,17 +61,10 @@ export const fetchProfile = () => {
 };
 
 export const getQuote = async () => {
-  const options = {
-    method: "GET",
-    url: "https://bodybuilding-quotes1.p.rapidapi.com/random-quote",
-    headers: {
-      "X-RapidAPI-Host": "bodybuilding-quotes1.p.rapidapi.com",
-      "X-RapidAPI-Key": process.env.QUOTE_KEY
-    }
-  };
   try {
-    const { data } = await axios.request(options);
-    const quote = data.quote;
+    const { data } = await axios.get("https://type.fit/api/quotes");
+    const randomNumber = Math.floor(Math.random() * 1643);
+    const quote = data[randomNumber].text;
     return quote;
   } catch (err) {
     console.log(err);
