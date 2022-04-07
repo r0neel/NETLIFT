@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
-import { Title } from "../../components";
+import { Title, LogOut } from "../../components";
 import BackSettings from "../../components/BackSettings";
 import SettingsDelete from "./SettingsDelete";
 import SettingsHome from "./SettingsHome";

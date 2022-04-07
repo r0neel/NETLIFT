@@ -7,6 +7,7 @@ const SettingsHome = () => {
     { text: "Change Username", to: "username" },
     { text: "Change Password", to: "password" },
     { text: `Change Unit (${currentUnit})`, to: "unit" },
+    { text: "Log Out", to: "log-out" },
     { text: "Delete Account", to: "delete-account" },
   ];
   return (
