@@ -34,7 +34,7 @@ const App = () => {
       location.pathname === "/register" ? null : (
         <NavBar />
       )}
-    </>
+    </div>
   );
 };
 
