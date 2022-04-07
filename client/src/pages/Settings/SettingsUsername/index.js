@@ -14,7 +14,6 @@ const SettingsUsername = () => {
   ];
 
   const change = (e) => {
-    // TODO submit data to server and add error handling
     e.preventDefault();
     const data = { username: e.target["change username"].value };
     dispatch(updateUser(data));
