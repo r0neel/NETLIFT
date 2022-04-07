@@ -31,7 +31,7 @@ describe("SetBtn", () => {
       const homeClasses = [...homeLink.classList];
       expect(homeClasses).toContain("text-nl-navblue");
     });
-    test.each([{ a: /history/i }, { a: /progress/i }, { a: /settings/i }])(
+    test.each([{ a: /history/i }, { a: /create/i }, { a: /settings/i }])(
       "test $a link",
       ({ a }) => {
         const link = screen.getByText(a).parentElement;
@@ -53,7 +53,7 @@ describe("SetBtn", () => {
       const ActiveClasses = [...activeLink.classList];
       expect(ActiveClasses).toContain("text-nl-navblue");
     });
-    test.each([{ a: /home/i }, { a: /progress/i }, { a: /settings/i }])(
+    test.each([{ a: /home/i }, { a: /create/i }, { a: /settings/i }])(
       "test $a link",
       ({ a }) => {
         const link = screen.getByText(a).parentElement;
@@ -62,16 +62,16 @@ describe("SetBtn", () => {
       }
     );
   });
-  describe("styles only the progress icon on index route", () => {
+  describe("styles only the create icon on index route", () => {
     beforeEach(() => {
       render(
-        <MemoryRouter initialEntries={["/progress"]}>
+        <MemoryRouter initialEntries={["/create"]}>
           <NavBar />
         </MemoryRouter>
       );
     });
-    it("has a navblue progress link", () => {
-      const activeLink = screen.getByText(/progress/i).parentElement;
+    it("has a navblue create link", () => {
+      const activeLink = screen.getByText(/create/i).parentElement;
       const ActiveClasses = [...activeLink.classList];
       expect(ActiveClasses).toContain("text-nl-navblue");
     });
@@ -97,7 +97,7 @@ describe("SetBtn", () => {
       const ActiveClasses = [...activeLink.classList];
       expect(ActiveClasses).toContain("text-nl-navblue");
     });
-    test.each([{ a: /home/i }, { a: /progress/i }, { a: /history/i }])(
+    test.each([{ a: /home/i }, { a: /create/i }, { a: /history/i }])(
       "test $a link",
       ({ a }) => {
         const link = screen.getByText(a).parentElement;
