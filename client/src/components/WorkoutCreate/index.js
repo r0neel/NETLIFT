@@ -19,8 +19,10 @@ const WorkoutCreate = () => {
       role="form"
       className="flex flex-col space-y-8"
     >
-      <Link to="workout" className="">
-        <FontAwesomeIcon className="w-8 h-8" icon={faPlus}></FontAwesomeIcon>
+      <Link to="workout" className="bg-nl-lightblue flex items-center rounded-xl text-2xl
+      text-nl-darkblue font-medium py-4 px-8 rounded-xl mx-auto hover:opacity-80 w-full text-center">
+        <FontAwesomeIcon className="w-8 h-8 pl-1" icon={faPlus}></FontAwesomeIcon>
+        <p className="pl-6">Add Exercises</p>
       </Link>
 
       <button className=" bg-nl-lightblue text-nl-darkblue text-2xl font-medium py-4 px-16 rounded-xl mx-auto hover:opacity-80">
