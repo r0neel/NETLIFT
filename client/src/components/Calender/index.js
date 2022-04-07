@@ -11,13 +11,13 @@ const CalenderComp = () => {
   }, [date]);
 
   return (
-    <>
+    <div data-testid="calender element">
       <Calender className="text-center" onChange={setDate} value={date} />
       <p className="text-center">
         <span className="bold">Selected Date:</span>{" "}
         {dayjsDate.format("D MMM YYYY")}
       </p>
-    </>
+    </div>
   );
 };
 

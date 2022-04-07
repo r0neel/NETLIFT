@@ -1,3 +1,4 @@
 node_modules
 dist
 coverage
+App.spec.js

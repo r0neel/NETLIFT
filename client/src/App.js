@@ -9,7 +9,7 @@ import {
   History,
   Progress,
   Settings,
-  WorkoutPage,
+  WorkoutPage
 } from "./pages";
 
 import { NavBar } from "./components";
@@ -29,11 +29,12 @@ const App = () => {
         <Route path="/settings/*" element={<Settings />} />
         <Route path="/workouts" element={<WorkoutPage />} />
       </Routes>
-      {/* {location.pathname === "/login" ||
-      location.pathname === "/register" ? null : ( */}
-          <NavBar />
-        {/* )} */}
-    </div>
+
+      {location.pathname === "/login" ||
+      location.pathname === "/register" ? null : (
+        <NavBar />
+      )}
+    </>
   );
 };
 

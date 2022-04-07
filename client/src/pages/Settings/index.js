@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
 import { Title } from "../../components";
 import BackSettings from "../../components/BackSettings";
@@ -10,8 +10,15 @@ import SettingsUnit from "./SettingsUnit";
 import SettingsUser from "./SettingsUsername";
 
 const Settings = () => {
+  const nav = useNavigate();
+  useEffect(() => {
+    const lsToken = localStorage.getItem("token");
+    if (lsToken == null) {
+      nav("/login", { replace: true });
+    }
+  });
+
   let { pathname } = useLocation();
-  console.log(pathname);
   return (
     <div className="bg-nl-darkblue min-h-[calc(100vh-73px)] px-8 flex flex-col">
       <Title text="Settings" />

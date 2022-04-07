@@ -1,20 +1,28 @@
 const initialState = {
-  user: {},
+  user: "",
+  profile: {},
+  logout: false,
   token: ""
 };
-  
+
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-  case "LOAD_USER": {
-    const newUser = action.payload;
-    return { ...state, user: {...state.user, newUser} };
+    case "LOAD_USER": {
+      const profile = action.payload;
+      return { ...state, profile: profile };
+    }
+    case "LOGIN": {
+      const token = action.payload.token;
+      const user = action.payload.user;
+      return { ...state, token: token, user: user };
+    }
+    case "LOGOUT": {
+      const isLoggedOut = action.payload;
+      return { ...state, logout: isLoggedOut };
+    }
+    default:
+      return state;
   }
-  case "LOGIN": {
-    const token = action.payload.token;
-    const user = action.payload.user;
-    return {...state,token: token , user: user };
-  }
-  default: return state;}};
-  
+};
 
 export default userReducer;
