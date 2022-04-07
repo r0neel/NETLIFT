@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faCalendarDays,
-  faChartLine,
+  faPlus,
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -38,7 +38,7 @@ const NavBar = () => {
               isActive ? linkDefault + " text-nl-navblue" : linkDefault
             }
           >
-            <FontAwesomeIcon className="w-8 h-8" icon={faChartLine} />
+            <FontAwesomeIcon className="w-8 h-8" icon={faPlus} />
             <p className="text-xs pt-1">Progress</p>
           </Link>
           <Link
