@@ -7,7 +7,7 @@ import {
   Create,
   ProgramsPage,
   History,
-  Progress,
+  Err404,
   Settings,
   WorkoutPage
 } from "./pages";
@@ -16,10 +16,12 @@ import { NavBar } from "./components";
 
 const App = () => {
   let location = useLocation();
+  console.log(location);
 
   return (
-    <div className="bg-nl-darkblue">
+    <div className="bg-nl-darkblue min-h-screen">
       <Routes>
+        <Route path="*" element={<Err404 />}/>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/create" element={<Create />} />
@@ -31,7 +33,7 @@ const App = () => {
 
       {location.pathname === "/login" ||
       location.pathname === "/register" ? null : (
-        <NavBar />
+        <NavBar /> 
       )}
     </div>
   );
