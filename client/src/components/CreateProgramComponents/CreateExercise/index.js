@@ -34,8 +34,8 @@ const WorkoutCreate = () => {
   };
 
   return (
-    <div className="mx-auto container mt-6 text-nl-darkblue p-8">
-      <h2 className=" text-center text-2xl pb-4">
+    <div className="mx-auto container mt-4 text-nl-darkblue p-8">
+      <h2 className=" text-center text-2xl pb-8">
         Here you can choose an exercise to add
       </h2>
       <form
@@ -47,7 +47,11 @@ const WorkoutCreate = () => {
         <SelectEquipment />
         <SelectSets name={"sets"} max={20} />
         <SelectSets name={"reps"} />
-        <input type="submit" value="Find exercises" />
+        <input
+          className=" bg-nl-lightblue text-nl-darkblue text-2xl font-medium py-4 px-16 rounded-xl mx-auto hover:opacity-80"
+          type="submit"
+          value="Find exercises"
+        />
       </form>
       {exercises && (
         <SelectExercise data={exercises} submitExercise={submitHandler} />
