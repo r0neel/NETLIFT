@@ -47,10 +47,40 @@ export const fetchProfile = () => {
       const { data } = await axios.get(`${api}/user`, {
         headers: { Authorization: token }
       });
+
       dispatch({
         type: "LOAD_USER",
         payload: data
       });
+    } catch (err) {
+      dispatch({
+        type: "SET_ERROR",
+        payload: err
+      });
+    }
+  };
+};
+
+export const updateUser = (updateCase) => {
+  return async (dispatch) => {
+    try {
+      const token = localStorage.getItem("token");
+      console.log(updateCase);
+
+      const { data } = await axios.patch(`${api}/user`, updateCase, {
+        headers: { Authorization: token }
+      });
+
+      if (data) {
+        dispatch({
+          type: "LOGOUT",
+          payload: true
+        });
+        localStorage.removeItem("token");
+        alert(
+          "Username has been changed, you have been logged out. \n Please refresh and sign in with the new username"
+        );
+      }
     } catch (err) {
       dispatch({
         type: "SET_ERROR",

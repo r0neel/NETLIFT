@@ -1,20 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Form from "../../components/Form";
 import logo from "../../static/imgs/logo.png";
-import { NavLink as Link } from "react-router-dom";
-import {loginUser} from "../../actions/userActions";
-import { useDispatch} from "react-redux";
-
+import { NavLink as Link, useNavigate } from "react-router-dom";
+import { fetchProfile, loginUser } from "../../actions/userActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
+  const nav = useNavigate();
   const inputs = [{ text: "username" }, { text: "password" }];
+  const userState = useSelector((state) => state.user);
+
   const login = (e) => {
     e.preventDefault();
     dispatch(loginUser(e));
-    
   };
-  
+
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (token != null) {
+      dispatch(fetchProfile());
+      nav("/", { replace: true });
+    }
+  });
+
   return (
     <div className="mx-auto bg-nl-darkblue min-h-screen container pt-16 px-8">
       <div className="space-y-20">
