@@ -2,14 +2,18 @@ const initialState = {
   user: "",
   profile: {},
   logout: false,
-  token: ""
+  token: "",
+  loading: false,
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "LOADING": {
+      return { ...state, loading: true, profile: action.payload };
+    }
     case "LOAD_USER": {
       const profile = action.payload;
-      return { ...state, profile: profile };
+      return { ...state, profile: profile, loading: false };
     }
     case "LOGIN": {
       const token = action.payload.token;

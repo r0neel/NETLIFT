@@ -7,16 +7,16 @@ const SettingsUsername = () => {
   const dispatch = useDispatch();
   const inputs = [
     {
-      text: "username",
+      text: "change username",
       message: "Must be between five and twenty characters",
-      pattern: ".{5,20}"
-    }
+      pattern: ".{5,20}",
+    },
   ];
 
   const change = (e) => {
     // TODO submit data to server and add error handling
     e.preventDefault();
-    const data = { username: e.target.username.value };
+    const data = { username: e.target["change username"].value };
     dispatch(updateUser(data));
   };
   return (

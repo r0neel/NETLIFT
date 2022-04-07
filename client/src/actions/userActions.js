@@ -1,13 +1,15 @@
 import axios from "axios";
 const api = process.env.API_URL;
 
+const loading = (text) => ({ type: "LOADING", payload: text });
+
 export const registerUser = (e) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.post(`${api}/register`, {
         username: e.target.username.value,
         email: e.target.email.value,
-        password: e.target.password.value
+        password: e.target.password.value,
       });
       return dispatch(loginUser(e));
     } catch (err) {
@@ -22,18 +24,18 @@ export const loginUser = (e) => {
       const username = e.target.username.value;
       const { data } = await axios.post(`${api}/login`, {
         username: e.target.username.value,
-        password: e.target.password.value
+        password: e.target.password.value,
       });
       let token = `Bearer ${data.access_token}`;
       localStorage.setItem("token", token);
       dispatch({
         type: "LOGIN",
-        payload: { user: username, token: token }
+        payload: { user: username, token: token },
       });
     } catch (err) {
       dispatch({
         type: "SET_ERROR",
-        payload: err
+        payload: err,
       });
     }
   };
@@ -41,21 +43,22 @@ export const loginUser = (e) => {
 
 export const fetchProfile = () => {
   return async (dispatch) => {
+    dispatch(loading("getting programs"));
     try {
       const token = localStorage.getItem("token");
 
       const { data } = await axios.get(`${api}/user`, {
-        headers: { Authorization: token }
+        headers: { Authorization: token },
       });
 
       dispatch({
         type: "LOAD_USER",
-        payload: data
+        payload: data,
       });
     } catch (err) {
       dispatch({
         type: "SET_ERROR",
-        payload: err
+        payload: err,
       });
     }
   };
@@ -67,14 +70,14 @@ export const updateUser = (updateCase) => {
       const token = localStorage.getItem("token");
       console.log(updateCase);
 
-      const { data } = await axios.patch(`${api}/user`, updateCase, {
-        headers: { Authorization: token }
+      const { data } = await axios.patch(`${api}user`, updateCase, {
+        headers: { Authorization: token },
       });
 
       if (data) {
         dispatch({
           type: "LOGOUT",
-          payload: true
+          payload: true,
         });
         localStorage.removeItem("token");
         alert(
@@ -84,7 +87,7 @@ export const updateUser = (updateCase) => {
     } catch (err) {
       dispatch({
         type: "SET_ERROR",
-        payload: err
+        payload: err,
       });
     }
   };
