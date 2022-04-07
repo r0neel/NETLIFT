@@ -9,7 +9,7 @@ import {
   History,
   Progress,
   Settings,
-  WorkoutPage
+  WorkoutPage,
 } from "./pages";
 
 import { NavBar } from "./components";
@@ -18,7 +18,7 @@ const App = () => {
   let location = useLocation();
 
   return (
-    <div className="bg-nl-darkblue">
+    <div data-testid="test-app" className="bg-nl-darkblue">
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -34,7 +34,7 @@ const App = () => {
       location.pathname === "/register" ? null : (
         <NavBar />
       )}
-    </>
+    </div>
   );
 };
 
